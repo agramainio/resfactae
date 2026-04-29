@@ -22,3 +22,12 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Local full-resolution archives - never commit
+media-originals/
+**/originals/
+**/_originals/
+*.psd
+*.tif
+*.tiff
+*.heic
