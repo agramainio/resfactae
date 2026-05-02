@@ -1,0 +1,1196 @@
+---
+const pageTitle = 'vitrify — production record for ceramic ateliers';
+const pageDescription =
+  'vitrify is a professional production record for ceramic ateliers: physical pieces, firing history, kiln planning, stock state, and atelier memory.';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+  </head>
+
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <a class="brand" href="/vitrify/" aria-label="vitrify home">
+          <span>vitrify</span>
+          <em>by res factae</em>
+        </a>
+
+        <nav class="nav" aria-label="Page navigation">
+          <a href="#record">Record</a>
+          <a href="#kiln">Kiln</a>
+          <a href="#stock">Stock</a>
+          <a href="#memory">Memory</a>
+        </nav>
+
+        <a class="top-cta" href="#access">Request access</a>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="label">For ceramic and porcelain ateliers</p>
+          <h1>The production record for ceramic ateliers.</h1>
+          <p class="intro">
+            Track physical pieces, firing history, kiln planning, stock state, and atelier memory —
+            from making to ready work.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#record">See what it records</a>
+            <a class="button secondary" href="#access">Request access</a>
+          </div>
+        </div>
+
+        <aside class="studio-panel" aria-label="Example vitrify studio overview">
+          <div class="panel-header">
+            <div>
+              <span>Atelier record</span>
+              <strong>Today</strong>
+            </div>
+            <em>example</em>
+          </div>
+
+          <div class="record-stack">
+            <article>
+              <span>physical pieces</span>
+              <strong>184</strong>
+              <p>registered across stock, clients, classes, and experiments</p>
+            </article>
+
+            <article>
+              <span>next firing</span>
+              <strong>74%</strong>
+              <p>estimated kiln load from waiting pieces</p>
+            </article>
+
+            <article>
+              <span>ready stock</span>
+              <strong>76</strong>
+              <p>finished work currently available or assigned</p>
+            </article>
+          </div>
+
+          <div class="panel-note">
+            <span>recent firing</span>
+            <strong>glaze · 18 pieces · 2 losses recorded</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="problem">
+        <p>
+          Ceramic production rarely lives in one place.
+        </p>
+        <p>
+          Some of it is on shelves, some in kiln notes, some in messages, some in memory,
+          some in shop stock, and some nowhere at all.
+        </p>
+      </section>
+
+      <section id="record" class="section spine-section">
+        <div class="section-head">
+          <p class="label">Production spine</p>
+          <h2>Built around the physical piece.</h2>
+          <p>
+            vitrify starts with the object itself: what exists, where it is in production,
+            what happened to it, and what the atelier can trust later.
+          </p>
+        </div>
+
+        <div class="spine">
+          <article>
+            <span>01</span>
+            <h3>Piece</h3>
+            <p>One record for one physical object, not a vague quantity counter.</p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>State</h3>
+            <p>Clear production state without forcing every studio into one technique.</p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>Firing</h3>
+            <p>History of kiln events, included pieces, timing, and outcomes.</p>
+          </article>
+
+          <article>
+            <span>04</span>
+            <h3>History</h3>
+            <p>A usable atelier memory for stock, losses, decisions, and future production.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="kiln" class="section kiln-section">
+        <div class="kiln-copy">
+          <p class="label">Kiln planning</p>
+          <h2>Plan firings without turning vitrify into a kiln controller.</h2>
+          <p>
+            Estimate load, see what is waiting, record firing history, and understand when
+            work should become available again.
+          </p>
+        </div>
+
+        <div class="schedule" aria-label="Example kiln planning board">
+          <article>
+            <span>waiting</span>
+            <strong>42 pieces</strong>
+            <p>ready to be included in a future firing</p>
+          </article>
+
+          <article class="active">
+            <span>next load</span>
+            <strong>74% estimate</strong>
+            <p>capacity based on studio size categories</p>
+          </article>
+
+          <article>
+            <span>available</span>
+            <strong>Tue 09:30</strong>
+            <p>from firing and cooling assumptions</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="stock" class="section stock-section">
+        <div class="section-head">
+          <p class="label">Stock state</p>
+          <h2>Know what is ready, missing, or still in progress.</h2>
+          <p>
+            Sales tools begin when something can be sold. vitrify begins earlier:
+            while the work is still moving through the atelier.
+          </p>
+        </div>
+
+        <div class="stock-grid">
+          <article>
+            <span>Ready</span>
+            <strong>finished work</strong>
+          </article>
+          <article>
+            <span>Missing</span>
+            <strong>stock gaps</strong>
+          </article>
+          <article>
+            <span>Assigned</span>
+            <strong>clients, classes, fairs</strong>
+          </article>
+          <article>
+            <span>In progress</span>
+            <strong>work before inventory</strong>
+          </article>
+        </div>
+      </section>
+
+      <section id="memory" class="section memory-section">
+        <div class="memory-card">
+          <p class="label">Atelier memory</p>
+          <h2>Statistics should come from good records, not extra admin.</h2>
+          <p>
+            Over time, vitrify can show useful atelier patterns: recurring losses,
+            forms that sell, stock gaps, firing outcomes, and what should be produced again.
+          </p>
+          <p>
+            These statistics are not a separate workflow. They are a result of recording
+            pieces, firings, stock movement, and outcomes in one structured place.
+          </p>
+        </div>
+
+        <div class="insight-list" aria-label="Example future statistics">
+          <article>
+            <span>recurring loss</span>
+            <strong>large platter</strong>
+          </article>
+          <article>
+            <span>stock gap</span>
+            <strong>small bowl</strong>
+          </article>
+          <article>
+            <span>best movement</span>
+            <strong>matte green cup</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section commerce-section">
+        <div class="commerce-copy">
+          <p class="label">Production before sales</p>
+          <h2>Shopify and vitrify are not the same job.</h2>
+          <p>
+            Shopify manages the storefront. vitrify manages the production side:
+            pieces, batches, firings, stock state, losses, planning, and atelier history.
+          </p>
+          <p>
+            Later, vitrify can support stock updates or synchronization with Shopify,
+            while keeping the production record inside the atelier.
+          </p>
+        </div>
+      </section>
+
+      <section class="read-more">
+        <details>
+          <summary>Technique flexibility</summary>
+          <div>
+            <p>
+              vitrify should not belong to one ceramic method. It should support studios
+              working with wheel throwing, hand-building, slab work, casting, sculpture,
+              tiles, tableware, teaching stock, and production batches.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What vitrify is not</summary>
+          <div>
+            <p>
+              vitrify is not booking, invoicing, CRM, a public storefront, a kiln controller,
+              or a ceramic encyclopedia. It is focused on the production record.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section id="access" class="access">
+        <p class="label">Early development</p>
+        <h2>Shape vitrify with real atelier production.</h2>
+        <p>
+          The first version is being designed for ceramic and porcelain ateliers that need
+          clearer production, firing, stock, loss, and history tracking.
+        </p>
+
+        <!-- TODO: confirm real contact email before public launch. -->
+        <a class="button primary" href="mailto:hello@resfactae.xyz?subject=vitrify%20early%20access">
+          Request access
+        </a>
+      </section>
+
+      <footer class="footer">
+        <span>vitrify by res factae</span>
+        <nav>
+          <a href="/">res factae</a>
+          <a href="/work/vitrify/">project note</a>
+        </nav>
+      </footer>
+    </main>
+  </body>
+</html>
+
+<style>
+  @font-face {
+    font-family: "Apfel Grotezk";
+    src: url("/fonts/apfel/ApfelGrotezk-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Apfel Grotezk";
+    src: url("/fonts/apfel/ApfelGrotezk-Mittel.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Apfel Grotezk";
+    src: url("/fonts/apfel/ApfelGrotezk-Fett.woff2") format("woff2");
+    font-weight: 750;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --ink: #111827;
+    --muted: #5b6472;
+    --quiet: #7a8392;
+    --line: rgba(17, 24, 39, 0.14);
+    --line-strong: rgba(17, 24, 39, 0.24);
+
+    --page: #f7f9fd;
+    --surface: #ffffff;
+    --surface-blue: #eef5ff;
+    --surface-cyan: #e8f8fb;
+    --surface-green: #ecf8f1;
+    --surface-violet: #f2efff;
+    --surface-yellow: #fbf5d6;
+
+    --blue: #7da8ff;
+    --cyan: #6bd2e2;
+    --green: #7fd7a4;
+    --violet: #b8a4f4;
+    --yellow: #ead45f;
+
+    --radius: 18px;
+    --radius-small: 10px;
+    --max: 1160px;
+
+    font-family:
+      "Apfel Grotezk",
+      "Afacad Flux",
+      "Gill Sans",
+      "Trebuchet MS",
+      system-ui,
+      sans-serif;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 88% 4%, rgba(184, 164, 244, 0.2), transparent 34rem),
+      radial-gradient(circle at 8% 18%, rgba(107, 210, 226, 0.16), transparent 30rem),
+      linear-gradient(135deg, #fbfcff 0%, #f5f8fd 48%, #f8f9fc 100%);
+    font-family: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  strong,
+  span,
+  em,
+  summary,
+  a {
+    overflow-wrap: break-word;
+  }
+
+  .page {
+    overflow-x: clip;
+    min-height: 100vh;
+  }
+
+  .topbar,
+  .hero,
+  .problem,
+  .section,
+  .read-more,
+  .access,
+  .footer {
+    width: min(var(--max), calc(100% - 32px));
+    margin-inline: auto;
+  }
+
+  .topbar {
+    padding: 22px 0 12px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .brand {
+    display: inline-flex;
+    flex-direction: column;
+    min-width: max-content;
+    line-height: 1;
+  }
+
+  .brand span {
+    font-size: 1.48rem;
+    font-weight: 750;
+    letter-spacing: -0.045em;
+  }
+
+  .brand em {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 0.74rem;
+    font-style: normal;
+    letter-spacing: 0.02em;
+  }
+
+  .nav {
+    justify-self: center;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px);
+  }
+
+  .nav a {
+    padding: 8px 11px;
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .nav a:hover {
+    color: var(--ink);
+    background: var(--surface-blue);
+  }
+
+  .top-cta {
+    min-height: 40px;
+    padding: 10px 14px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-small);
+    background: rgba(255, 255, 255, 0.82);
+    font-size: 0.92rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .top-cta:hover {
+    background: var(--surface-cyan);
+  }
+
+  .hero {
+    min-height: calc(100svh - 76px);
+    padding: clamp(54px, 8vw, 96px) 0 clamp(48px, 7vw, 76px);
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+    gap: clamp(34px, 6vw, 72px);
+    align-items: center;
+  }
+
+  .label {
+    margin: 0 0 14px;
+    color: #3454c7;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1 {
+    max-width: 780px;
+    margin-bottom: 24px;
+    font-size: clamp(4rem, 8.2vw, 7.6rem);
+    line-height: 0.92;
+    letter-spacing: -0.058em;
+    font-weight: 750;
+    text-wrap: balance;
+  }
+
+  h2 {
+    margin-bottom: 18px;
+    font-size: clamp(2.55rem, 4.9vw, 5.1rem);
+    line-height: 0.96;
+    letter-spacing: -0.052em;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  h3 {
+    margin-bottom: 10px;
+    font-size: 1.32rem;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 650;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  .intro {
+    max-width: 640px;
+    margin-bottom: 0;
+    color: #283246;
+    font-size: clamp(1.22rem, 2vw, 1.7rem);
+    line-height: 1.24;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  .hero-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 17px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-small);
+    font-size: 0.96rem;
+    font-weight: 600;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .button.primary {
+    color: white;
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .button.primary:hover {
+    background: #050914;
+  }
+
+  .button.secondary {
+    background: rgba(255, 255, 255, 0.86);
+  }
+
+  .button.secondary:hover {
+    background: var(--surface-blue);
+  }
+
+  .studio-panel {
+    width: 100%;
+    min-width: 0;
+    padding: clamp(16px, 2.4vw, 24px);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 28px 90px rgba(34, 55, 103, 0.1);
+  }
+
+  .panel-header {
+    padding-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .panel-header span,
+  .panel-header em,
+  .record-stack span,
+  .panel-note span {
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-style: normal;
+  }
+
+  .panel-header strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 1.48rem;
+    line-height: 1;
+    letter-spacing: -0.035em;
+    font-weight: 650;
+  }
+
+  .panel-header em {
+    padding: 6px 9px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface-blue);
+    white-space: nowrap;
+  }
+
+  .record-stack {
+    margin-top: 16px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .record-stack article {
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .record-stack article:nth-child(1) {
+    background: var(--surface-blue);
+  }
+
+  .record-stack article:nth-child(2) {
+    background: var(--surface-cyan);
+  }
+
+  .record-stack article:nth-child(3) {
+    background: var(--surface-green);
+  }
+
+  .record-stack strong {
+    display: block;
+    margin-top: 6px;
+    font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+    font-weight: 750;
+  }
+
+  .record-stack p {
+    margin: 8px 0 0;
+    color: #313b4f;
+    font-size: 0.98rem;
+  }
+
+  .panel-note {
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface-violet);
+  }
+
+  .panel-note strong {
+    display: block;
+    margin-top: 5px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+  }
+
+  .problem {
+    padding: 0 0 clamp(58px, 8vw, 92px);
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 12px;
+  }
+
+  .problem p {
+    min-height: 150px;
+    margin: 0;
+    padding: clamp(18px, 2.4vw, 26px);
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.88);
+    font-size: clamp(1.28rem, 2.5vw, 2.16rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  .problem p:nth-child(2) {
+    background: var(--surface-violet);
+  }
+
+  .section,
+  .read-more,
+  .access {
+    padding: clamp(62px, 9vw, 102px) 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .section-head {
+    max-width: 810px;
+    margin-bottom: 34px;
+  }
+
+  .section-head p:not(.label),
+  .kiln-copy p:not(.label),
+  .memory-card p,
+  .commerce-copy p,
+  .access p {
+    color: #283246;
+    font-size: clamp(1.06rem, 1.45vw, 1.22rem);
+  }
+
+  .spine {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .spine article {
+    min-width: 0;
+    min-height: 250px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .spine article + article {
+    border-left: 1px solid var(--line);
+  }
+
+  .spine article:nth-child(1) {
+    background: var(--surface-blue);
+  }
+
+  .spine article:nth-child(2) {
+    background: var(--surface-cyan);
+  }
+
+  .spine article:nth-child(3) {
+    background: var(--surface-green);
+  }
+
+  .spine article:nth-child(4) {
+    background: var(--surface-violet);
+  }
+
+  .spine span {
+    color: var(--quiet);
+    font-weight: 600;
+  }
+
+  .spine h3 {
+    margin-top: auto;
+  }
+
+  .spine p {
+    margin-bottom: 0;
+    color: #313b4f;
+  }
+
+  .kiln-section {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+    gap: clamp(32px, 6vw, 66px);
+    align-items: center;
+  }
+
+  .schedule {
+    display: grid;
+    gap: 10px;
+  }
+
+  .schedule article {
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .schedule article.active {
+    background: var(--surface-cyan);
+  }
+
+  .schedule span,
+  .stock-grid span,
+  .insight-list span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .schedule strong {
+    display: block;
+    margin-top: 7px;
+    font-size: 1.5rem;
+    letter-spacing: -0.035em;
+    font-weight: 650;
+  }
+
+  .schedule p {
+    margin: 8px 0 0;
+    color: #313b4f;
+  }
+
+  .stock-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .stock-grid article {
+    min-height: 160px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .stock-grid article:nth-child(1) {
+    background: var(--surface-green);
+  }
+
+  .stock-grid article:nth-child(2) {
+    background: var(--surface-yellow);
+  }
+
+  .stock-grid article:nth-child(3) {
+    background: var(--surface-blue);
+  }
+
+  .stock-grid article:nth-child(4) {
+    background: var(--surface-violet);
+  }
+
+  .stock-grid strong {
+    font-size: 1.3rem;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    font-weight: 650;
+  }
+
+  .memory-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: clamp(28px, 5vw, 58px);
+    align-items: start;
+  }
+
+  .memory-card {
+    padding: clamp(24px, 4vw, 44px);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: var(--surface);
+  }
+
+  .insight-list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .insight-list article {
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .insight-list article:nth-child(1) {
+    background: var(--surface-violet);
+  }
+
+  .insight-list article:nth-child(2) {
+    background: var(--surface-yellow);
+  }
+
+  .insight-list article:nth-child(3) {
+    background: var(--surface-green);
+  }
+
+  .insight-list strong {
+    display: block;
+    margin-top: 8px;
+    font-size: 1.34rem;
+    letter-spacing: -0.035em;
+    font-weight: 650;
+  }
+
+  .commerce-copy {
+    max-width: 850px;
+  }
+
+  .commerce-section {
+    background:
+      linear-gradient(90deg, transparent, transparent),
+      transparent;
+  }
+
+  .commerce-copy h2 {
+    max-width: 880px;
+  }
+
+  .commerce-copy p {
+    max-width: 760px;
+  }
+
+  .read-more {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  details {
+    min-width: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  details:nth-child(2) {
+    background: var(--surface-blue);
+  }
+
+  summary {
+    cursor: pointer;
+    padding: 20px;
+    font-size: clamp(1.18rem, 1.8vw, 1.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 650;
+  }
+
+  summary::marker {
+    color: #3454c7;
+  }
+
+  details div {
+    padding: 0 20px 20px;
+  }
+
+  details p {
+    margin-bottom: 0;
+    color: #313b4f;
+  }
+
+  .access {
+    text-align: center;
+  }
+
+  .access h2,
+  .access p {
+    max-width: 810px;
+    margin-inline: auto;
+  }
+
+  .access .button {
+    margin-top: 18px;
+  }
+
+  .footer {
+    padding: 32px 0 46px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    color: var(--muted);
+  }
+
+  .footer nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .footer a:hover {
+    color: var(--ink);
+  }
+
+  @media (max-width: 1020px) {
+    .topbar {
+      grid-template-columns: 1fr auto;
+    }
+
+    .nav {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      justify-self: stretch;
+      overflow-x: auto;
+      justify-content: flex-start;
+      scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hero,
+    .kiln-section,
+    .memory-section {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      min-height: auto;
+    }
+
+    .studio-panel {
+      max-width: 720px;
+    }
+
+    .problem,
+    .read-more {
+      grid-template-columns: 1fr;
+    }
+
+    .spine,
+    .stock-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .spine article + article {
+      border-left: 0;
+    }
+
+    .spine article:nth-child(even) {
+      border-left: 1px solid var(--line);
+    }
+
+    .spine article:nth-child(n + 3) {
+      border-top: 1px solid var(--line);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .topbar,
+    .hero,
+    .problem,
+    .section,
+    .read-more,
+    .access,
+    .footer {
+      width: min(100% - 22px, var(--max));
+    }
+
+    .topbar {
+      padding-top: 12px;
+      gap: 12px;
+    }
+
+    .brand span {
+      font-size: 1.28rem;
+    }
+
+    .brand em {
+      font-size: 0.68rem;
+    }
+
+    .top-cta {
+      min-height: 38px;
+      padding: 9px 11px;
+      font-size: 0.86rem;
+    }
+
+    .nav {
+      border-radius: 12px;
+      padding: 4px;
+    }
+
+    .nav a {
+      padding: 8px 9px;
+      font-size: 0.84rem;
+    }
+
+    .hero {
+      padding-top: 44px;
+      padding-bottom: 44px;
+      gap: 32px;
+    }
+
+    h1 {
+      font-size: clamp(3.05rem, 14vw, 4.55rem);
+      line-height: 0.96;
+      letter-spacing: -0.045em;
+    }
+
+    h2 {
+      font-size: clamp(2.15rem, 10vw, 3.45rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    h3 {
+      font-size: 1.24rem;
+    }
+
+    .intro {
+      font-size: clamp(1.14rem, 5.6vw, 1.42rem);
+      line-height: 1.25;
+    }
+
+    .hero-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .button {
+      width: 100%;
+      min-height: 48px;
+      padding: 13px 15px;
+    }
+
+    .studio-panel {
+      border-radius: 18px;
+    }
+
+    .record-stack strong {
+      font-size: 2.24rem;
+    }
+
+    .problem p {
+      min-height: 118px;
+      font-size: clamp(1.18rem, 6vw, 1.62rem);
+    }
+
+    .section,
+    .read-more,
+    .access {
+      padding: 56px 0;
+    }
+
+    .spine,
+    .stock-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .spine article {
+      min-height: 170px;
+    }
+
+    .spine article:nth-child(even) {
+      border-left: 0;
+    }
+
+    .spine article + article {
+      border-top: 1px solid var(--line);
+    }
+
+    .stock-grid article {
+      min-height: 130px;
+    }
+
+    .read-more {
+      grid-template-columns: 1fr;
+    }
+
+    .footer {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 380px) {
+    h1 {
+      font-size: clamp(2.7rem, 13vw, 3.35rem);
+    }
+
+    h2 {
+      font-size: clamp(1.95rem, 9.5vw, 2.75rem);
+    }
+
+    .top-cta {
+      font-size: 0.8rem;
+    }
+  }
+</style>
