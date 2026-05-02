@@ -13,7 +13,7 @@ const pageDescription =
     <meta name="description" content={pageDescription} />
   </head>
 
-  <body>
+  <body data-font="apfel">
     <main class="page">
       <header class="topbar">
         <a class="brand" href="/vitrify/" aria-label="vitrify home">
@@ -28,7 +28,21 @@ const pageDescription =
           <a href="#memory">Memory</a>
         </nav>
 
-        <a class="top-cta" href="#access">Request access</a>
+        <div class="header-tools">
+          <label class="font-picker-label" for="font-picker">
+            <span>Typeface</span>
+            <select id="font-picker" class="font-picker" aria-label="Choose page typeface">
+              <option value="apfel">Apfel Grotezk</option>
+              <option value="general">General Sans</option>
+              <option value="supreme">Supreme</option>
+              <option value="satoshi">Satoshi</option>
+              <option value="inclusive">Inclusive Sans</option>
+              <option value="work">Work Sans</option>
+            </select>
+          </label>
+
+          <a class="top-cta" href="#access">Request access</a>
+        </div>
       </header>
 
       <section class="hero">
@@ -280,6 +294,22 @@ const pageDescription =
         </nav>
       </footer>
     </main>
+
+    <script is:inline>
+      const fontPicker = document.querySelector('#font-picker');
+      const storedFont = window.localStorage.getItem('vitrify-font');
+
+      if (storedFont && fontPicker) {
+        document.body.dataset.font = storedFont;
+        fontPicker.value = storedFont;
+      }
+
+      fontPicker?.addEventListener('change', (event) => {
+        const selectedFont = event.target.value;
+        document.body.dataset.font = selectedFont;
+        window.localStorage.setItem('vitrify-font', selectedFont);
+      });
+    </script>
   </body>
 </html>
 
@@ -289,7 +319,7 @@ const pageDescription =
     src: url("/fonts/apfel/ApfelGrotezk-Regular.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
   }
 
   @font-face {
@@ -297,7 +327,7 @@ const pageDescription =
     src: url("/fonts/apfel/ApfelGrotezk-Mittel.woff2") format("woff2");
     font-weight: 600;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
   }
 
   @font-face {
@@ -305,10 +335,156 @@ const pageDescription =
     src: url("/fonts/apfel/ApfelGrotezk-Fett.woff2") format("woff2");
     font-weight: 750;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "General Sans";
+    src: url("/fonts/GeneralSans/GeneralSans-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "General Sans";
+    src: url("/fonts/GeneralSans/GeneralSans-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "General Sans";
+    src: url("/fonts/GeneralSans/GeneralSans-Semibold.woff2") format("woff2");
+    font-weight: 650;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "General Sans";
+    src: url("/fonts/GeneralSans/GeneralSans-Bold.woff2") format("woff2");
+    font-weight: 750;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Supreme";
+    src: url("/fonts/Supreme/Supreme-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Supreme";
+    src: url("/fonts/Supreme/Supreme-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Supreme";
+    src: url("/fonts/Supreme/Supreme-Bold.woff2") format("woff2");
+    font-weight: 750;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Satoshi";
+    src: url("/fonts/Satoshi/Satoshi-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Satoshi";
+    src: url("/fonts/Satoshi/Satoshi-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Satoshi";
+    src: url("/fonts/Satoshi/Satoshi-Bold.woff2") format("woff2");
+    font-weight: 750;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Inclusive Sans";
+    src: url("/fonts/Inclusive-Sans/InclusiveSans-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Inclusive Sans";
+    src: url("/fonts/Inclusive-Sans/InclusiveSans-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Inclusive Sans";
+    src: url("/fonts/Inclusive-Sans/InclusiveSans-SemiBold.woff2") format("woff2");
+    font-weight: 650;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Inclusive Sans";
+    src: url("/fonts/Inclusive-Sans/InclusiveSans-Bold.woff2") format("woff2");
+    font-weight: 750;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Work Sans";
+    src: url("/fonts/Work-Sans/WorkSans-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Work Sans";
+    src: url("/fonts/Work-Sans/WorkSans-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Work Sans";
+    src: url("/fonts/Work-Sans/WorkSans-SemiBold.woff2") format("woff2");
+    font-weight: 650;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Work Sans";
+    src: url("/fonts/Work-Sans/WorkSans-Bold.woff2") format("woff2");
+    font-weight: 750;
+    font-style: normal;
+    font-display: block;
   }
 
   :root {
+    --site-font: "Apfel Grotezk";
+
     --ink: #111827;
     --muted: #5b6472;
     --quiet: #7a8392;
@@ -333,13 +509,31 @@ const pageDescription =
     --radius-small: 10px;
     --max: 1160px;
 
-    font-family:
-      "Apfel Grotezk",
-      "Afacad Flux",
-      "Gill Sans",
-      "Trebuchet MS",
-      system-ui,
-      sans-serif;
+    font-family: var(--site-font), sans-serif;
+  }
+
+  body[data-font="apfel"] {
+    --site-font: "Apfel Grotezk";
+  }
+
+  body[data-font="general"] {
+    --site-font: "General Sans";
+  }
+
+  body[data-font="supreme"] {
+    --site-font: "Supreme";
+  }
+
+  body[data-font="satoshi"] {
+    --site-font: "Satoshi";
+  }
+
+  body[data-font="inclusive"] {
+    --site-font: "Inclusive Sans";
+  }
+
+  body[data-font="work"] {
+    --site-font: "Work Sans";
   }
 
   *,
@@ -363,7 +557,7 @@ const pageDescription =
       radial-gradient(circle at 88% 4%, rgba(184, 164, 244, 0.2), transparent 34rem),
       radial-gradient(circle at 8% 18%, rgba(107, 210, 226, 0.16), transparent 30rem),
       linear-gradient(135deg, #fbfcff 0%, #f5f8fd 48%, #f8f9fc 100%);
-    font-family: inherit;
+    font-family: var(--site-font), sans-serif;
   }
 
   a {
@@ -452,6 +646,50 @@ const pageDescription =
   .nav a:hover {
     color: var(--ink);
     background: var(--surface-blue);
+  }
+
+  .header-tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .font-picker-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 5px 5px 5px 11px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-small);
+    background: rgba(255, 255, 255, 0.82);
+  }
+
+  .font-picker-label span {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .font-picker {
+    max-width: 168px;
+    min-height: 30px;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 500;
+    padding: 4px 28px 4px 8px;
+  }
+
+  .font-picker:focus {
+    outline: 2px solid rgba(52, 84, 199, 0.28);
+    outline-offset: 2px;
   }
 
   .top-cta {
@@ -911,12 +1149,6 @@ const pageDescription =
     max-width: 850px;
   }
 
-  .commerce-section {
-    background:
-      linear-gradient(90deg, transparent, transparent),
-      transparent;
-  }
-
   .commerce-copy h2 {
     max-width: 880px;
   }
@@ -999,7 +1231,12 @@ const pageDescription =
 
   @media (max-width: 1020px) {
     .topbar {
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr;
+    }
+
+    .header-tools {
+      justify-content: space-between;
+      width: 100%;
     }
 
     .nav {
@@ -1076,9 +1313,30 @@ const pageDescription =
       font-size: 0.68rem;
     }
 
+    .header-tools {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .font-picker-label {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .font-picker {
+      max-width: none;
+      width: min(190px, 58vw);
+    }
+
     .top-cta {
+      width: 100%;
       min-height: 38px;
       padding: 9px 11px;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       font-size: 0.86rem;
     }
 
