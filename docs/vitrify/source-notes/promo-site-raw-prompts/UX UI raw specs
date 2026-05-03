@@ -1,0 +1,2037 @@
+# Vitrify — UX/UI Master Specification
+
+## 1. Purpose of this document
+
+This document defines the intended **UX and UI direction for Vitrify** as a product, not just for the current branch.
+
+It is written for a senior UX/UI designer who should be able to design the product without reading the codebase.
+
+The goal is to explain:
+
+* what Vitrify is
+* who it serves
+* what the app must help users do
+* what it must deliberately avoid becoming
+* what information architecture it needs
+* what workflows matter most
+* what the interface should feel like
+* how the mobile and desktop experiences should differ
+* how future statistics, inventory, firing, and production views should fit together
+
+This is not an implementation ticket.
+
+This is a product and interface specification.
+
+---
+
+# 2. Product identity
+
+## 2.1 What Vitrify is
+
+Vitrify is a **professional production and atelier memory system for ceramic and porcelain studios**.
+
+It helps a working atelier keep track of physical objects, production state, kiln activity, losses, stock, and operational history.
+
+The simplest definition:
+
+> Vitrify is a production memory system for ceramic studios: it records what exists, where it is in the making process, what happened to it, what failed, what is ready, and what the atelier can learn from that history.
+
+Vitrify is not a decorative lifestyle app. It is not a hobby journal. It is not a generic inventory spreadsheet with prettier buttons.
+
+It should feel like a serious, calm, practical tool used by people who make physical objects professionally.
+
+## 2.2 Core promise
+
+Vitrify helps an atelier answer questions like:
+
+* What physical pieces currently exist?
+* What needs to be fired?
+* What needs to be glazed?
+* What is ready?
+* What is available stock?
+* Which pieces belong to an order, a class, a student, or general stock?
+* What went into a kiln firing?
+* What came out?
+* What failed?
+* Why did it fail?
+* Which forms, glazes, or workflows cause the most loss?
+* Which forms or glazes perform best commercially?
+* What did the atelier produce this month?
+* What is stuck in production?
+* What should be made next?
+
+## 2.3 Product personality
+
+Vitrify should feel:
+
+* professional
+* quiet
+* trustworthy
+* precise
+* fast
+* operational
+* slightly archival
+* respectful of physical craft
+* made for real work, not for presentation decks
+
+It should not feel:
+
+* cute
+* childish
+* gamified
+* influencer-like
+* overly rounded
+* overly animated
+* visually noisy
+* like Shopify
+* like a CRM
+* like booking software
+* like accounting software
+* like a generic no-code dashboard
+* like a “ceramics learning app”
+
+Vitrify does not teach ceramics. It helps professional ceramicists manage what they already know how to do.
+
+---
+
+# 3. Target users
+
+## 3.1 Primary users
+
+The primary users are professional ceramic or porcelain ateliers that make, fire, track, sell, teach, or manage physical ceramic pieces.
+
+They may include:
+
+* atelier owners
+* production managers
+* ceramicists
+* porcelain makers
+* kiln managers
+* studio assistants
+* class/workshop coordinators
+* small production teams
+
+## 3.2 Working context
+
+The user is often:
+
+* standing in a studio
+* near wet clay, porcelain, glaze, dust, tools, shelves, or kilns
+* using a phone with one hand
+* interrupted often
+* recording things after the fact, not always at the exact moment of production
+* moving between physical shelves, kiln rooms, benches, packaging areas, and sales areas
+* not interested in filling unnecessary forms
+
+The app must respect messy reality.
+
+A ceramic studio does not behave like a clean ecommerce database.
+
+## 3.3 User skill assumption
+
+Assume the user knows ceramics.
+
+Do not over-explain basic ceramic concepts in the interface.
+
+The interface can use professional atelier concepts, but it should not require software knowledge.
+
+---
+
+# 4. Fundamental product model from a UX point of view
+
+The designer does not need to know the database, but must understand the domain objects because the UX must reflect them.
+
+## 4.1 Atelier
+
+The atelier is the main ownership space.
+
+Everything belongs to an atelier context:
+
+* pieces
+* people
+* molds/forms
+* firings
+* kilns
+* failures
+* production notes
+* statistics
+
+The app is not centered on one personal user. It is centered on the atelier’s production memory.
+
+## 4.2 Piece
+
+A Piece is one real physical object.
+
+This is one of the most important rules in Vitrify.
+
+If five identical cups are made, they are five physical pieces, even if the UI groups them visually.
+
+Each piece can have its own:
+
+* state
+* origin
+* purpose
+* color/glaze information
+* price/value
+* failure record
+* firing history
+* commercial status
+* notes
+
+The UI may group similar pieces to reduce clutter, but it must never erase the fact that each piece exists individually.
+
+## 4.3 Piece state
+
+The core production states are intentionally simple:
+
+1. To fire
+2. To glaze
+3. Ready
+
+Failure is not a normal production stage.
+
+Failure is a side outcome that can happen to a piece.
+
+A failed piece may still need to remain in history for statistics, loss analysis, and traceability.
+
+## 4.4 Piece purpose
+
+A piece can exist for different reasons.
+
+Core purposes:
+
+* stock
+* student/class work
+* order/custom work
+
+This is critical: Vitrify is not only mold-based.
+
+Pieces may come from:
+
+* atelier reusable molds/forms
+* personal/student molds
+* external or brought-in pieces
+* hand-built or non-mold work
+* experimental/test pieces
+* one-off work
+
+The UX must not force every piece to start from the main atelier mold library.
+
+## 4.5 Mold/Form library
+
+The mold/form library is the reusable atelier reference library.
+
+It is useful for repeated production, capacity estimates, stock logic, loss statistics, and making new pieces faster.
+
+But it is not the whole product.
+
+The interface must support both:
+
+* repeated production from known atelier forms
+* one-off, external, student, personal, or experimental pieces
+
+## 4.6 Person
+
+A Person is a domain record inside the atelier.
+
+A person may be:
+
+* a student
+* a client
+* both
+
+Do not design separate “student database” and “client database” experiences unless there is a very strong product reason.
+
+The same person can take a class and place an order.
+
+## 4.7 Kiln
+
+A Kiln is a studio resource.
+
+The kiln object should remain simple in the UX:
+
+* name
+* capacity profile
+* active/inactive state
+* notes or configuration if needed
+
+The kiln is not a machine controller.
+
+Vitrify records kiln use; it does not control kiln hardware.
+
+## 4.8 Firing batch
+
+A firing batch records a real kiln event.
+
+It answers:
+
+* which kiln was used
+* what type of firing it was
+* when it happened
+* which pieces were loaded
+* what notes were recorded
+* what the result was
+* which pieces advanced state
+* which pieces failed or had issues
+
+A firing batch has operational states such as:
+
+* planned/loading
+* active
+* completed
+* aborted
+
+The exact labels may evolve, but the UX must preserve the distinction between loading, active firing/cooling, and completed history.
+
+## 4.9 Failure record
+
+A FailureRecord is attached to a piece when that piece fails or is lost.
+
+Failure is important because it feeds real operational insight.
+
+The UX must make it easy to record failure without making the user feel punished.
+
+Failure data should support:
+
+* reason
+* category
+* stage/context
+* estimated loss value
+* notes
+* date/time
+* relation to firing batch if relevant
+
+When multiple pieces fail, the UI must support both:
+
+* several pieces failing for the same reason and same value
+* several pieces failing for different reasons and different values
+
+The interface should not force one shared reason across many pieces if reality is more specific.
+
+---
+
+# 5. Product principles
+
+## 5.1 Physical truth over digital neatness
+
+The interface must reflect physical reality.
+
+Ceramic work is batch-like, messy, delayed, and retrospective.
+
+The app must not assume perfect data entry at the exact moment something happens.
+
+Users should be able to correct, backfill, and manually advance pieces when they forgot to use the app during real work.
+
+## 5.2 Fast recording beats perfect forms
+
+The app should minimize friction.
+
+A studio user should be able to record common actions quickly:
+
+* create pieces
+* mark pieces as fired/glazed/ready
+* start a firing
+* complete a firing
+* record failure
+* adjust stock/commercial status
+* find a piece
+
+Avoid long forms when the action is common.
+
+Use progressive disclosure.
+
+## 5.3 The app should not become a generic business suite
+
+Vitrify should not become:
+
+* Shopify replacement
+* CRM
+* invoicing system
+* booking platform
+* accounting platform
+* project management tool
+* kiln controller
+* education platform
+
+It may integrate with or inform these areas later, but its core is atelier production memory.
+
+## 5.4 Mobile-first does not mean mobile-only
+
+The product must be excellent on phones and excellent on desktop.
+
+Do not simply stretch the phone UI onto desktop.
+
+Design two deliberate experiences:
+
+* mobile: fast, task-focused, one-handed, vertical, operational
+* desktop: wider, analytical, comparison-friendly, planning-friendly
+
+The same product logic should power both, but the layout should not be identical.
+
+## 5.5 Calm density
+
+The app should show enough information to be useful without becoming visually crowded.
+
+Avoid giant empty cards and oversized buttons.
+
+Avoid toy-like UI.
+
+The product should feel dense enough for professionals, but not like enterprise software.
+
+## 5.6 Group visually, preserve individually
+
+Identical or similar pieces can be grouped in list views.
+
+But the user must always be able to inspect and edit the individual physical pieces.
+
+A group is a display convenience, not a data truth.
+
+## 5.7 Statistics must be operational, not vanity
+
+Statistics should help the atelier make better decisions.
+
+Avoid decorative charts that do not answer operational questions.
+
+Good statistics include:
+
+* production throughput
+* pieces stuck in queue
+* kiln usage
+* failure rate by form/glaze/stage
+* estimated value lost
+* best-selling forms/glazes
+* stock movement
+* ready stock by category
+* repeated bottlenecks
+* production over time
+
+Bad statistics include:
+
+* decorative totals without action
+* random pie charts
+* “engagement” style metrics
+* charts that look impressive but do not help the studio decide what to do
+
+---
+
+# 6. Information architecture
+
+## 6.1 Primary navigation
+
+The product should have a small number of durable main areas.
+
+Recommended primary areas:
+
+1. Today / Bench
+2. Pieces
+3. Firings
+4. Stock
+5. Statistics
+6. Library
+7. Journal
+8. Settings
+
+On mobile, not all of these need to be visible at the same level. The bottom navigation should show the most operational areas, with secondary areas accessible through a menu.
+
+On desktop, more areas can be visible in a sidebar.
+
+## 6.2 Today / Bench
+
+The Bench is the operational home.
+
+It answers:
+
+* what needs attention now?
+* what is waiting?
+* what can be acted on?
+* what is currently in a firing?
+* what was recently created?
+* what is blocked?
+
+The Bench should not be a dashboard full of charts.
+
+It should be a working surface.
+
+Possible Bench sections:
+
+* To fire
+* To glaze
+* Ready to put into stock/order/class handoff
+* Active firing / cooling
+* Recent failures
+* Recently created pieces
+* Quick actions
+* Warnings or blocked items
+
+## 6.3 Pieces
+
+The Pieces area is the complete registry of physical pieces.
+
+It should support:
+
+* search
+* filters
+* grouped view
+* individual view
+* bulk selection
+* edit
+* delete with confirmation
+* state change
+* mark failed
+* assign purpose
+* assign person/order/class context
+* inspect history
+
+The Pieces area should be the source of truth for individual physical objects.
+
+## 6.4 Firings
+
+The Firings area manages kiln events.
+
+It should support:
+
+* active firing view
+* create new firing
+* progressive loading
+* select pieces to load
+* estimate capacity
+* complete firing
+* record results
+* abort firing with strong confirmation
+* firing history
+* filter by kiln/date/type/result
+
+Firings should feel like a logbook plus operational workflow.
+
+## 6.5 Stock
+
+Stock is not the same as all pieces.
+
+Stock should show ready, available pieces that can be sold, reserved, delivered, or otherwise used.
+
+It should not include pieces still in production unless explicitly filtered.
+
+Stock should answer:
+
+* what is available now?
+* how many of each form/color exist?
+* what is reserved?
+* what is sold/delivered?
+* what is low?
+* what should be remade?
+
+Stock can group heavily because the user usually cares about availability counts.
+
+But every stock unit must still be traceable to real pieces.
+
+## 6.6 Statistics
+
+Statistics should be its own area, not sprinkled randomly everywhere.
+
+The statistics area should include operational insight across:
+
+* production
+* loss
+* firing
+* stock
+* sales/commercial movement if available
+* forms/molds
+* glazes/colors
+* people/classes/orders if relevant
+
+Statistics should support date ranges and filters.
+
+Statistics should always help answer a practical question.
+
+## 6.7 Library
+
+The Library stores reusable references.
+
+It may include:
+
+* atelier molds/forms
+* colors/glazes
+* kiln profiles
+* recurring piece types
+* categories
+* tags
+* default values
+
+The Library is not where the user does daily work.
+
+It should be calm, editable, and searchable.
+
+## 6.8 Journal
+
+The Journal preserves atelier memory.
+
+It may include:
+
+* general notes
+* firing notes
+* glaze tests
+* production observations
+* problems noticed
+* experiments
+* decisions
+* reminders
+* photos or attachments in future
+
+The Journal should not compete with the Piece registry. It is contextual memory, not inventory.
+
+## 6.9 Settings
+
+Settings should include configuration that changes how the atelier works.
+
+Examples:
+
+* atelier profile
+* people/team access
+* kilns
+* capacity assumptions
+* default currency
+* default production categories
+* export/import
+* language/localization settings
+* data safety/account settings
+
+Settings should not hide everyday actions.
+
+---
+
+# 7. Navigation model
+
+## 7.1 Mobile navigation
+
+Mobile must prioritize action.
+
+Recommended bottom navigation:
+
+* Bench
+* Pieces
+* Firings
+* Stock
+* More
+
+The More area can contain:
+
+* Statistics
+* Library
+* Journal
+* Settings
+
+If Statistics becomes a daily professional need, it may move into the main navigation later.
+
+## 7.2 Desktop navigation
+
+Desktop should use a left sidebar or compact rail.
+
+Recommended desktop structure:
+
+* Bench
+* Pieces
+* Firings
+* Stock
+* Statistics
+* Library
+* Journal
+* Settings
+
+Desktop can support split panes:
+
+* list on the left, detail on the right
+* filters on the side
+* charts and tables side by side
+* batch actions with persistent selection summary
+
+## 7.3 Action placement
+
+Primary actions should be obvious but not gigantic.
+
+Core actions:
+
+* New piece
+* New firing
+* Mark as fired/glazed/ready
+* Mark failed
+* Add note
+* Search
+* Filter
+
+Actions should appear near the object they affect.
+
+Avoid placing all actions in a global floating button if the action depends on context.
+
+---
+
+# 8. Visual design direction
+
+## 8.1 Overall feel
+
+The UI should feel like:
+
+* an atelier ledger
+* an inventory table
+* a production bench
+* a kiln log
+* a calm professional tool
+
+It should not feel like:
+
+* a social app
+* a beginner ceramics course
+* a toy app
+* a glossy SaaS landing page
+* a bubbly habit tracker
+
+## 8.2 Shape language
+
+Avoid excessive rounded rectangles.
+
+Use:
+
+* flat sections
+* dividers
+* subtle borders
+* rows
+* tables
+* compact cards only where useful
+* restrained surfaces
+
+Rounded corners, if used, should be subtle.
+
+Avoid large pill buttons everywhere.
+
+## 8.3 Density
+
+The product should support professional density.
+
+Mobile should still be readable, but not oversized.
+
+Avoid “Duplo” UI where every button is enormous and every object sits in a large soft card.
+
+## 8.4 Typography
+
+Typography should be practical, readable, and slightly distinctive.
+
+Recommended typographic behavior:
+
+* clear hierarchy
+* compact labels
+* readable body text
+* tabular numbers where useful
+* no decorative type for critical information
+* no tiny low-contrast labels
+
+The interface must handle long object names without breaking.
+
+## 8.5 Color
+
+Color should communicate state and category without becoming decorative noise.
+
+Color should be used for:
+
+* production state
+* warnings
+* failure/loss
+* ready/available
+* active firing
+* selected items
+* filters
+
+Avoid making every card a different color.
+
+The base palette should feel calm, material, archival, and professional.
+
+## 8.6 Icons
+
+Icons may help recognition, but the app should not depend on cute illustrations.
+
+Use icons sparingly.
+
+Avoid generic craft icons unless they genuinely improve scanning.
+
+Text labels should remain clear.
+
+## 8.7 Motion
+
+Motion should be functional only.
+
+Use animation for:
+
+* confirming an action
+* opening a panel
+* loading state
+* selection feedback
+* transition between list and detail
+
+Do not use playful animation as decoration.
+
+---
+
+# 9. Core screen specifications
+
+## 9.1 Bench / Today screen
+
+### Purpose
+
+The Bench is the operational landing screen.
+
+It should tell the user what is physically waiting in the studio.
+
+### Main questions answered
+
+* What needs firing?
+* What needs glazing?
+* What is ready?
+* What is currently in a kiln?
+* What has recently failed?
+* What action should I take next?
+
+### Mobile layout
+
+Suggested mobile structure:
+
+1. Compact header with atelier name and date/context
+2. Quick action row
+3. Active firing status, if any
+4. Queue sections
+5. Recent activity
+
+Queue sections should show counts and the most important items first.
+
+Example sections:
+
+* To fire
+* To glaze
+* Ready
+* Failed recently
+
+Each section should allow tapping through to filtered Pieces.
+
+### Desktop layout
+
+Desktop can show:
+
+* queues in columns
+* active firing side panel
+* recent activity panel
+* quick statistics strip
+
+### Important UX rules
+
+* Do not turn the Bench into a chart dashboard.
+* Do not overload it with lifetime totals.
+* It should support quick action.
+* It should feel current and operational.
+
+---
+
+## 9.2 New Piece flow
+
+### Purpose
+
+Create one or more physical pieces quickly.
+
+### Required behavior
+
+The flow must support:
+
+* single piece creation
+* quantity creation
+* repeated production from existing atelier forms/molds
+* one-off pieces not from the main library
+* personal/student/external pieces
+* multiple colors/glazes where applicable
+* purpose selection
+* optional person/order/class association
+* editable price/value
+* notes
+
+### UX principle
+
+The user should not be forced into a mold-first worldview.
+
+The first decision should be about the origin/type of piece, not necessarily a mold.
+
+### Recommended flow
+
+Step 1: What are you recording?
+
+Options:
+
+* From atelier mold/form
+* One-off or hand-built piece
+* Student/personal piece
+* External/brought-in piece
+* Test/experiment
+
+Step 2: Describe the piece
+
+Depending on origin:
+
+* select or type form/mold
+* enter piece name/description
+* quantity
+* size category
+* color/glaze information if known
+* purpose
+
+Step 3: Assign context
+
+Optional:
+
+* stock
+* order
+* class/student
+* test/experiment
+* notes
+
+Step 4: Review and create
+
+If quantity > 1, the UI should make clear that multiple physical pieces will be created.
+
+### Important fields
+
+* origin
+* form/mold/name
+* quantity
+* color/glaze
+* purpose
+* person/order/class link
+* price/value
+* notes
+
+### Bulk creation behavior
+
+If five identical pieces are created, the UI can show “5 created” as a group.
+
+But each piece must remain individually accessible later.
+
+---
+
+## 9.3 Pieces list
+
+### Purpose
+
+Show and manage all physical pieces.
+
+### Required capabilities
+
+* search
+* filter
+* sort
+* group/ungroup toggle
+* select one or many
+* bulk actions
+* inspect individual pieces
+* edit piece
+* delete with confirmation
+* mark failed
+* manually advance state
+
+### Core filters
+
+* state
+* purpose
+* origin
+* form/mold
+* color/glaze
+* person
+* kiln/firing history
+* failed/not failed
+* commercial status
+* date created
+* date updated
+
+### Grouped view
+
+Grouped view should group similar pieces by useful production identity, for example:
+
+* form/mold
+* color/glaze
+* state
+* purpose
+
+Grouped rows should show:
+
+* group name
+* count
+* state distribution if mixed
+* warning if some pieces in group failed
+* quick expand action
+
+### Individual view
+
+Individual rows should show:
+
+* piece name/reference
+* state
+* origin/purpose
+* color/glaze
+* relevant person/order/class
+* latest event
+* warning/failure marker if any
+
+### Selection behavior
+
+Bulk selection is essential.
+
+When pieces are selected, show a persistent action bar with:
+
+* number selected
+* change state
+* assign to firing
+* mark failed
+* edit common fields if safe
+* clear selection
+
+### Important UX warning
+
+Failed pieces inside groups must be visible.
+
+Do not hide failed pieces inside a normal group count without a clear marker.
+
+---
+
+## 9.4 Piece detail screen
+
+### Purpose
+
+Show the full history and editable details of one physical piece.
+
+### Required sections
+
+1. Identity
+2. Current state
+3. Origin and purpose
+4. Color/glaze/material information
+5. Person/order/class context
+6. Firing history
+7. Failure/loss record if any
+8. Notes/journal entries
+9. Commercial/stock status
+10. Audit/history timeline
+
+### Required actions
+
+* edit
+* duplicate/record similar
+* change state
+* mark failed
+* assign to firing
+* remove from firing if allowed
+* delete with confirmation
+
+### Timeline
+
+The timeline should show important events:
+
+* created
+* assigned to firing
+* firing completed
+* state changed
+* marked failed
+* edited
+* sold/reserved/delivered if supported
+* notes added
+
+The timeline is important because Vitrify is an atelier memory system.
+
+---
+
+## 9.5 Manual state correction flow
+
+### Purpose
+
+Support real studio situations where the user forgot to record actions at the exact time.
+
+### Required actions
+
+The user must be able to manually mark selected pieces as:
+
+* fired / moved to next production state
+* glazed / ready for final firing or next state depending workflow
+* ready
+* failed
+
+The app should not require every state change to happen through a full firing workflow.
+
+### UX requirement
+
+When manually changing state, ask for minimal context:
+
+* date of change, default now
+* optional note
+* optional reason/context
+
+Do not punish the user for backfilling.
+
+---
+
+## 9.6 Failure recording flow
+
+### Purpose
+
+Record loss or failure accurately without making the user fill repetitive forms unnecessarily.
+
+### Core cases
+
+Case A: one piece failed
+
+* choose category/reason
+* optional notes
+* estimated loss value
+* context/stage
+* date
+
+Case B: many pieces failed for the same reason
+
+* select pieces
+* choose shared failure details
+* apply same reason/value to all
+* allow per-piece adjustment before saving
+
+Case C: many pieces failed for different reasons
+
+* select pieces
+* present per-piece rows
+* allow reason/category/value per piece
+* support copy-down from one row to others
+
+### UX requirement
+
+The flow should support both batch speed and individual accuracy.
+
+Recommended pattern:
+
+1. Select pieces
+2. Choose “Mark failed”
+3. Ask: “Same failure details for all?”
+4. If yes: shared form with optional per-piece review
+5. If no: per-piece editable table/list
+6. Confirm
+
+### Loss value
+
+Estimated loss value belongs to the failure record.
+
+Do not silently infer it from sale price unless clearly presented as a suggestion.
+
+---
+
+## 9.7 Firing creation / kiln loading flow
+
+### Purpose
+
+Create a real firing batch and load pieces progressively.
+
+### Required behavior
+
+The user should be able to:
+
+* choose kiln
+* choose firing type/context
+* select/load pieces
+* see approximate capacity
+* save as loading/planned
+* start firing
+* complete firing
+* record notes
+* record failures/issues
+
+### Flow structure
+
+Step 1: Start firing batch
+
+* kiln
+* firing type
+* date/time or planned schedule
+* notes/program if relevant
+
+Step 2: Load pieces
+
+* show eligible pieces
+* filter by state
+* search
+* group similar pieces
+* add selected pieces to batch
+* show loaded count/capacity estimate
+
+Step 3: Review loaded batch
+
+* list loaded groups
+* expand individual pieces
+* remove pieces before start
+* warnings for mixed states or unusual items
+
+Step 4: Start / mark active
+
+* lock key details as needed
+* show active/cooling status
+
+Step 5: Complete firing
+
+* review loaded pieces
+* mark normal outcome
+* record failures/issues
+* add firing notes
+* complete batch
+* advance piece states only after completion
+
+### Important UX rule
+
+Pieces should not advance state when merely loaded.
+
+They advance when the firing is completed.
+
+### Capacity
+
+Capacity should be approximate, not fake-precise.
+
+Use simple categories:
+
+* micro
+* small
+* medium
+* large
+* extra large
+* irregular
+
+The UX should communicate “approximate fit,” not exact packing geometry.
+
+---
+
+## 9.8 Active firing screen
+
+### Purpose
+
+Show what is currently in progress.
+
+### Required information
+
+* kiln
+* firing type
+* status
+* start time/date
+* expected cooling or completion note if available
+* loaded pieces
+* notes
+* actions
+
+### Required actions
+
+* add note
+* complete firing
+* abort firing
+* inspect loaded pieces
+
+### Abort behavior
+
+Aborting a firing is serious.
+
+The UI should require strong confirmation and explain what happens to loaded pieces.
+
+The user may need to record whether pieces failed, remained unchanged, or need manual review.
+
+---
+
+## 9.9 Firing history
+
+### Purpose
+
+Preserve kiln memory.
+
+### Required capabilities
+
+* list completed firings
+* filter by kiln
+* filter by firing type
+* filter by date
+* inspect loaded pieces
+* inspect outcomes
+* see notes
+* see failures related to the firing
+
+### Desktop opportunity
+
+Desktop can show firing history as a table/logbook.
+
+Mobile can show compact chronological entries.
+
+---
+
+## 9.10 Stock screen
+
+### Purpose
+
+Show what is ready and available.
+
+### Required distinction
+
+Stock is derived from physical pieces.
+
+Stock is not a separate manual count detached from real objects.
+
+### Required views
+
+* grouped stock by form/color
+* individual stock pieces
+* reserved stock
+* sold/delivered history if supported
+* low stock / remake suggestions
+
+### Core actions
+
+* reserve
+* mark sold/delivered
+* move back to available if needed
+* inspect pieces
+* create similar pieces
+
+### Important UX rule
+
+Do not mix “in production” pieces into stock unless the user explicitly switches to a broader planning view.
+
+---
+
+## 9.11 Library screen
+
+### Purpose
+
+Manage reusable studio references.
+
+### Sections
+
+* forms/molds
+* colors/glazes
+* kilns
+* size/capacity categories
+* categories/tags
+* default values
+
+### Mold/Form library behavior
+
+Each reusable form/mold record should show:
+
+* name
+* description
+* size/capacity category
+* default value/price if applicable
+* active/inactive
+* cast/creation count if tracked
+* related statistics
+
+### Important UX rule
+
+The library should not become the only way to create pieces.
+
+New pieces may be created without entering the main reusable library.
+
+---
+
+## 9.12 People screen or people access
+
+People may not need to be a top-level nav item at first.
+
+But the UX must support people records for:
+
+* students
+* clients
+* both
+
+A person detail should eventually show:
+
+* linked pieces
+* linked orders/classes if supported
+* contact notes if relevant
+* history
+
+Avoid building a heavy CRM experience.
+
+People exist to support atelier production context, not sales pipeline management.
+
+---
+
+## 9.13 Journal screen
+
+### Purpose
+
+Capture notes that do not belong only to one piece.
+
+### Entry types
+
+Possible journal entry types:
+
+* general atelier note
+* firing note
+* glaze test
+* production observation
+* failure observation
+* inventory note
+* experiment
+
+### UX requirements
+
+* quick note entry
+* date/time
+* optional tags
+* optional link to piece/form/firing/person
+* searchable history
+
+### Important rule
+
+Journal entries should enrich production memory.
+
+They should not replace structured records for pieces, firings, or failures.
+
+---
+
+# 10. Statistics UX specification
+
+## 10.1 Purpose of statistics
+
+Statistics in Vitrify must help the atelier make operational decisions.
+
+They should answer:
+
+* What are we making?
+* What is blocked?
+* What breaks?
+* What sells or moves?
+* What should we produce more carefully?
+* What should we stop making or redesign?
+* How much value are we losing?
+* Which kiln/firing/context creates problems?
+* Which forms/colors/glazes perform best?
+
+## 10.2 Statistics principles
+
+Every statistic should have:
+
+* a clear question
+* a clear period
+* clear filters
+* clear relationship to physical pieces
+* a possible action or interpretation
+
+Avoid charts that exist only because the data is available.
+
+## 10.3 Recommended statistics sections
+
+### Production overview
+
+* pieces created over time
+* pieces completed over time
+* current WIP by state
+* average time in state if available
+* queue aging
+
+### Loss overview
+
+* failed pieces count
+* estimated loss value
+* failure rate by form
+* failure rate by color/glaze
+* failure by stage/context
+* failure by firing batch/kiln if relevant
+* most common failure categories
+
+### Kiln usage
+
+* firings by kiln
+* firing types over time
+* pieces per firing
+* approximate capacity usage
+* failure rate by kiln/firing type
+
+### Stock overview
+
+* ready available stock
+* stock by form/color
+* reserved/sold/delivered if supported
+* low stock
+* slow stock
+
+### Commercial movement, if supported
+
+* best-selling forms
+* best-selling colors/glazes
+* sell-through by form/color
+* stock value
+* ready value vs lost value
+
+### Form/mold insights
+
+* most produced forms
+* forms with highest loss
+* forms with best movement
+* forms with stock imbalance
+
+### Glaze/color insights
+
+* most used colors/glazes
+* colors/glazes with highest failure/loss
+* colors/glazes with best commercial movement
+
+## 10.4 Statistics UI
+
+Statistics should use:
+
+* compact KPI strips
+* tables for ranking
+* simple line/bar charts when useful
+* clear filters
+* comparison periods where helpful
+* drill-down from summary to actual pieces
+
+Every chart should allow the user to inspect the underlying pieces or records where possible.
+
+## 10.5 Mobile statistics
+
+Mobile statistics should be short, stacked, and question-based.
+
+Examples:
+
+* “What is waiting now?”
+* “What failed this month?”
+* “Which forms lose the most value?”
+* “Which colors are moving best?”
+
+Avoid dense chart grids on mobile.
+
+## 10.6 Desktop statistics
+
+Desktop can support deeper analysis:
+
+* tables with filters
+* side-by-side charts
+* drill-down panels
+* export
+* comparison views
+
+Desktop is where planning and analysis can be richer.
+
+---
+
+# 11. Search and filtering
+
+Search is central.
+
+The user should be able to find records by:
+
+* piece reference
+* form/mold name
+* color/glaze
+* person
+* firing batch
+* note content
+* status
+* date
+
+Filters must be easy to combine and clear.
+
+Use filter chips or compact panels.
+
+The user should always see when a list is filtered.
+
+Provide a clear “clear filters” action.
+
+---
+
+# 12. Bulk actions
+
+Bulk actions are critical because atelier work often happens in batches.
+
+Supported bulk actions should include:
+
+* assign selected pieces to firing
+* change state
+* mark failed
+* assign purpose/context
+* update commercial status if safe
+* add note
+* delete with strong confirmation
+
+Bulk actions must clearly show:
+
+* how many pieces are selected
+* what will happen
+* whether the action affects individual records
+
+For destructive or irreversible actions, require confirmation.
+
+---
+
+# 13. Forms and input design
+
+## 13.1 General form principles
+
+Forms should be:
+
+* short by default
+* progressively expandable
+* forgiving
+* searchable where lists are long
+* optimized for phone use
+* friendly to retrospective entry
+
+Avoid requiring every field upfront.
+
+## 13.2 Autocomplete over dropdowns
+
+For long or growing lists, use autocomplete/typeahead instead of dropdowns.
+
+Examples:
+
+* form/mold selection
+* color/glaze selection
+* person selection
+* tags
+
+The user should be able to create a missing item inline where appropriate.
+
+## 13.3 Defaults
+
+Use smart defaults carefully:
+
+* quantity defaults to 1
+* date defaults to now/today
+* state defaults based on creation context
+* price/value may be suggested but editable
+
+Never hide important assumptions.
+
+## 13.4 Required fields
+
+Keep required fields minimal.
+
+A physical studio record can be incomplete but still useful.
+
+The user should be able to capture quickly and refine later.
+
+---
+
+# 14. Empty states
+
+Empty states should help the user act.
+
+Examples:
+
+* No pieces to fire → explain that newly created pieces will appear here
+* No active firing → offer to create a firing
+* No stock → explain that ready available pieces appear here
+* No statistics yet → explain what data will produce meaningful stats
+
+Avoid cute illustrations.
+
+Use plain, helpful language.
+
+---
+
+# 15. Error and confirmation behavior
+
+## 15.1 Confirmation
+
+Use confirmations for:
+
+* delete
+* abort firing
+* mark many pieces failed
+* destructive bulk changes
+* irreversible state changes if they affect history
+
+## 15.2 Undo
+
+Where safe, provide undo.
+
+Examples:
+
+* accidental state change
+* archive/remove from list
+* simple edit
+
+## 15.3 Error language
+
+Error messages should be calm and practical.
+
+They should explain:
+
+* what failed
+* what the user can do
+* whether data was saved or not
+
+Avoid technical jargon.
+
+---
+
+# 16. Desktop-specific UX
+
+Desktop should not simply be stretched mobile.
+
+Desktop should support:
+
+* tables
+* multi-column layouts
+* split list/detail views
+* advanced filters
+* batch editing
+* statistics exploration
+* printable/exportable views
+* keyboard shortcuts eventually
+
+Examples:
+
+* Pieces: table with filters and right-side detail drawer
+* Firings: history table with selected firing detail panel
+* Statistics: chart/table combinations with drill-down
+* Stock: grouped inventory table with individual piece drawer
+
+---
+
+# 17. Mobile-specific UX
+
+Mobile should support fast studio use.
+
+Mobile should prioritize:
+
+* large enough touch targets
+* compact vertical lists
+* sticky action bars
+* clear selected states
+* minimal typing
+* quick filters
+* scan-friendly rows
+* short forms
+
+Avoid:
+
+* dense desktop tables
+* huge decorative cards
+* hidden critical actions
+* long modal forms
+* side-by-side layouts
+
+Mobile is the primary operational surface.
+
+---
+
+# 18. Accessibility and usability
+
+The product should support:
+
+* readable contrast
+* text scaling
+* keyboard navigation on desktop
+* clear focus states
+* screen reader labels for controls
+* touch targets suitable for studio use
+* selectable text where useful
+* no reliance on color alone for state
+
+Because users may work in bright studio light, dusty environments, or with one hand, clarity matters more than visual novelty.
+
+---
+
+# 19. Localization and copy strategy
+
+The UI should be designed with localization in mind.
+
+Do not hardcode layout assumptions based on one language.
+
+Labels may become longer or shorter depending on language.
+
+The design should support:
+
+* longer button text
+* longer form labels
+* localized date formats
+* localized currency
+* localized pluralization
+* translated empty states and error messages
+
+The design spec should define meaning and behavior, not depend on one specific language.
+
+---
+
+# 20. Data visibility and trust
+
+The user must trust that Vitrify remembers correctly.
+
+Design should make it easy to see:
+
+* what was created
+* when it changed
+* who/what it is linked to
+* which firing affected it
+* why it failed
+* whether it is ready/available/reserved/sold
+
+History and traceability are part of the product value.
+
+Do not hide important history behind obscure menus.
+
+---
+
+# 21. Future product direction
+
+## 21.1 Near-term UX priorities
+
+The next UX/UI phase should focus on:
+
+1. A coherent app shell
+2. Better Bench / Today screen
+3. Strong Pieces list and detail design
+4. Clear new piece flow that is not only mold-based
+5. Better failure recording workflow
+6. Clear firing workflow
+7. Early operational statistics foundation
+8. Cleaner mobile navigation
+9. Desktop layouts that are intentionally designed, not stretched mobile
+
+## 21.2 Medium-term product areas
+
+Future expansions may include:
+
+* better people/class/order context
+* stock movement history
+* sales/import integrations
+* photo support
+* label printing
+* QR codes for pieces or shelves
+* exports
+* import from spreadsheets
+* deeper statistics
+* planning suggestions
+* glaze test library
+* production recipes or repeatable runs
+
+## 21.3 Things to be careful with
+
+Do not expand too early into:
+
+* full CRM
+* invoicing
+* booking management
+* ecommerce storefront
+* accounting
+* staff scheduling
+* social/community features
+* educational content
+
+These may distract from the core product.
+
+---
+
+# 22. Screen inventory
+
+A UX/UI master should eventually design at least these screens or states:
+
+## App shell
+
+* mobile shell
+* desktop shell
+* navigation states
+* loading state
+* offline/sync indication if needed
+
+## Bench
+
+* normal Bench
+* empty Bench
+* active firing present
+* many queues populated
+
+## Pieces
+
+* all pieces grouped
+* all pieces ungrouped
+* filtered pieces
+* selected pieces bulk action state
+* empty filtered state
+* piece detail
+* edit piece
+* delete confirmation
+
+## New piece
+
+* origin choice
+* from library form/mold
+* one-off/hand-built
+* student/personal/external
+* quantity creation
+* review before create
+* created confirmation
+
+## Failure
+
+* one piece failure
+* many pieces same failure
+* many pieces different failures
+* failure confirmation
+* failure detail/history
+
+## Firings
+
+* firing list
+* new firing setup
+* load pieces
+* loaded batch review
+* active firing
+* complete firing
+* record firing results
+* abort firing
+* firing detail/history
+
+## Stock
+
+* grouped available stock
+* individual stock pieces
+* reserved/sold/delivered states if supported
+* low stock/remake suggestions
+
+## Statistics
+
+* overview
+* production stats
+* loss stats
+* kiln stats
+* stock stats
+* form/glaze insights
+* drill-down into records
+
+## Library
+
+* forms/molds
+* colors/glazes
+* kilns
+* categories/tags
+* create/edit library item
+
+## Journal
+
+* journal list
+* create note
+* linked note
+* search/filter notes
+
+## Settings
+
+* atelier profile
+* team/access
+* kilns
+* defaults
+* localization/currency
+* data/export
+
+---
+
+# 23. Component system
+
+The designer should create a reusable component system for:
+
+* app header
+* bottom navigation
+* desktop sidebar
+* section headers
+* queue rows
+* grouped piece rows
+* individual piece rows
+* state badges
+* purpose badges
+* failure markers
+* capacity indicators
+* filter chips
+* search bars
+* selection action bars
+* confirmation dialogs
+* compact forms
+* autocomplete fields
+* date inputs
+* empty states
+* timelines
+* KPI cards
+* ranked statistic rows
+* simple charts
+* detail drawers
+* mobile sheets
+
+Components should feel consistent across the app.
+
+---
+
+# 24. Design acceptance criteria
+
+A successful UX/UI design for Vitrify should satisfy these criteria:
+
+## Product clarity
+
+* It is obvious that Vitrify is for professional ceramic/porcelain atelier production.
+* It does not look like ecommerce, CRM, booking, or accounting software.
+* It does not look like a beginner hobby app.
+
+## Workflow clarity
+
+* The user can quickly create pieces.
+* The user can see what needs firing/glazing/finishing.
+* The user can create and complete a firing.
+* The user can record failures accurately.
+* The user can inspect individual physical objects.
+* The user can understand stock separately from all pieces.
+
+## Physical truth
+
+* Grouping does not erase individual pieces.
+* Failure is visible and traceable.
+* Firing history is preserved.
+* Manual corrections are possible.
+
+## Mobile quality
+
+* The mobile experience is not an afterthought.
+* Main actions are reachable and clear.
+* Lists are scannable.
+* Forms are not exhausting.
+
+## Desktop quality
+
+* Desktop makes good use of width.
+* Tables, filters, and details are efficient.
+* Statistics and planning are stronger on desktop.
+
+## Visual maturity
+
+* The UI is calm and professional.
+* It avoids excessive rounded cards and toy-like buttons.
+* It has enough density for real work.
+* It has clear hierarchy and readable typography.
+
+## Future readiness
+
+* The design can support deeper statistics later.
+* The design can support more production contexts later.
+* The design does not lock the product into being only mold-based.
+* The design preserves the atelier-centered model.
+
+---
+
+# 25. Final product direction statement
+
+Vitrify should become the professional memory and control surface of a ceramic atelier.
+
+It should let the atelier see its physical production clearly:
+
+* what exists
+* what is waiting
+* what is ready
+* what failed
+* what was fired
+* what is in stock
+* what should be made again
+* what patterns are emerging
+
+The best version of Vitrify is not a beautiful dashboard.
+
+It is a practical, elegant, reliable atelier instrument.
+
+It should feel like opening a clean production ledger that actually understands ceramic work.

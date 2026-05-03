@@ -1,0 +1,353 @@
+Act as a senior full-stack web designer, UX/UI strategist, and creative art director.
+
+Create a refined promotional website concept for **vitrify**, a production journal for professional ceramic ateliers.
+
+The website should present vitrify as a calm, precise, serious tool for ceramic studios that need to track physical pieces, production states, firings, failures, stock, students, classes, clients, and orders over time.
+
+Core title:
+Production journal for ceramic ateliers.
+
+Core idea:
+vitrify records the physical life of ceramic work: what exists, where it is in production, why it exists, who it belongs to, what entered the kiln, what came out, what failed, what is ready, what is reserved, and what the atelier can learn from that history.
+
+vitrify helps professional ceramic studios track physical pieces through production states and firings, while organizing stock, class work, student pieces, client orders, custom orders, tests, and external pieces. It replaces scattered notebooks, spreadsheets, messages, habits, memory, and shelf-based tracking with a traceable production record.
+
+The product is not ecommerce, not CRM software, not a kiln controller, and not an app for students. It is a production memory system for ateliers.
+
+Positioning:
+Ceramic work is physical, cumulative, slow-moving, and easy to lose track of. Pieces wait on shelves, enter firings in batches, come back changed, fail unpredictably, get remade, become reserved, belong to a student, sit ready for a client, or disappear into studio memory.
+
+vitrify makes this work traceable.
+
+The site should explain the daily value:
+Knowing what needs attention now.
+
+And the long-term value:
+Knowing what the atelier has learned over time.
+
+The record becomes more useful with every firing.
+
+Key questions the website should surface:
+- Which student pieces still need firing?
+- Which custom-order pieces are blocked by failure?
+- What is actually available stock?
+- Which pieces are reserved, ready, delivered, or missing?
+- What failed in the last firing?
+- What needs to be remade for the next fair?
+- How many bisque mugs are left for Friday classes?
+- Which external pieces are waiting in the kiln queue?
+- How many pieces broke last month?
+- Which glaze colors sell the most?
+- Which forms fail most often?
+- Which kiln loads produce the most loss?
+- Which stock is ready but not moving?
+- What is the atelier still carrying in memory instead of recording?
+
+Product explanation:
+vitrify starts from the object itself.
+
+A piece is one real physical object. If five identical mugs are made, they are five pieces, even when the interface groups them visually.
+
+Each piece can carry:
+- production state
+- purpose
+- firing history
+- failure history
+- value
+- notes
+- stock status
+- student connection
+- class or workshop context
+- client or order connection
+
+Failure should not be treated as a normal production stage. It should be recorded as an outcome: visible, traceable, and useful for history, statistics, loss analysis, and remakes.
+
+Core features to communicate:
+- Record physical pieces
+- Track production states
+- Load and complete firings
+- Record failures and losses
+- Derive stock from real objects
+- Link pieces to students, classes, clients, and orders
+- Preserve atelier history over time
+- Export and import data
+- Connect to a Shopify webstore
+- Replace Excel and Google Sheets
+- Allow late recording and correction without interrupting the studio day
+
+Production contexts:
+Show that stock is only one part of the atelier. The same studio may manage general production, workshop pieces, student work, brought-in pieces, glaze tests, custom client orders, replacements after failure, and one-off experiments — all moving through the same shelves and kilns.
+
+Include these piece contexts:
+1. Stock  
+   General production pieces available, reserved, sold, delivered, or missing.
+
+2. Student work  
+   Pieces linked to a student, whether made in a class, workshop, or independent studio context.
+
+3. Class or workshop piece  
+   Pieces created during a session, grouped by class context while remaining individual physical objects.
+
+4. Custom order  
+   Pieces reserved for a client or order, with production state, failures, replacements, and completion status.
+
+5. Client order  
+   Pieces linked to a person or client context without turning the system into CRM software.
+
+6. Test or experiment  
+   Glaze tests, form trials, samples, one-offs, and uncertain work worth remembering.
+
+7. External or brought-in piece  
+   Work brought into the studio by a student or client, especially when it enters the kiln queue.
+
+Statistics philosophy:
+Do not frame vitrify as a dashboard for the sake of a dashboard.
+
+Statistics should emerge naturally from the ordinary production record:
+- pieces made
+- pieces fired
+- pieces failed
+- pieces sold
+- stock movement
+- recurring losses
+- kiln outcomes
+- student and class output
+- remakes
+- custom-order problems
+
+The goal is not vanity metrics. The goal is better studio memory and better operational decisions.
+
+UX/UI direction:
+The site should feel like an elegant production ledger: calm, structured, readable, precise.
+
+Avoid generic SaaS design clichés such as:
+- floating gradients
+- giant rounded cards
+- animated icons
+- dashboard explosion hero sections
+- bubbly startup visuals
+- playful craft illustrations
+- fake kiln dashboards
+- decorative 3D ceramic renders
+- clay-orange branding clichés
+- glaze gradients
+- beige artisan clichés
+- flame colors
+- fake handmade textures
+
+Visual direction:
+Use:
+- warm off-white or white background
+- restrained dark graphite text
+- muted blue-grey or ceramic grey structure
+- one precise accent color for CTAs
+- subtle ledger-like lines
+- quiet grids
+- thin dividers
+- compact data-like modules
+- screenshot-led proof
+- minimal iconography
+- mostly typographic hierarchy
+- calm, mature spacing
+
+Typography:
+Use **Supreme** as the main typeface.
+
+The typography should feel:
+- controlled
+- precise
+- modern
+- readable
+- not sterile
+- not cute
+- not luxury-fashion
+- not playful craft
+
+Use weight, spacing, and alignment more than oversized type. Avoid excessive uppercase. Use lowercase naturally, especially for “vitrify” and “res factae.”
+
+Visual hierarchy:
+Use three main text scales:
+1. Hero headline  
+   Large but not theatrical. Confident, not loud.
+
+2. Section headlines  
+   Medium, clear, editorial.
+
+3. Body copy  
+   Calm, readable, not tiny.
+
+Avoid the common SaaS mistake of a huge headline followed by a tiny subtitle. The relationship between headline and body text should feel mature and proportional.
+
+Component direction:
+Use:
+- thin dividers
+- quiet tables
+- production-state chips
+- small status labels
+- screenshot annotations
+- simple piece-record examples
+- timeline-like firing history previews
+- compact modules showing piece contexts
+- calm interface fragments that feel like evidence
+
+Avoid:
+- large rounded cards everywhere
+- playful icons
+- 3D ceramic renders
+- animated shelves
+- fake kiln dashboards
+- decorative object illustrations
+- oversized buttons
+- endless stacked cards
+
+Suggested page structure:
+
+1. Hero section
+Headline:
+Production journal for ceramic ateliers.
+
+Subcopy:
+vitrify records what exists, where it is in production, who it belongs to, what entered the kiln, what came out, what failed, what is ready, and what the atelier can learn from that history.
+
+CTA pair:
+- Request access
+- See how it works
+
+Visual:
+One strong mobile screenshot showing current piece queues or grouped pieces by production state.
+
+2. Problem section
+Explain that ceramic studios remember too much by habit. Work is spread across shelves, kilns, notebooks, spreadsheets, messages, and memory. When the studio grows, these questions become expensive.
+
+Use a calm list of operational questions, not dramatic marketing copy.
+
+3. What vitrify does
+Explain that vitrify tracks real physical pieces through production states, firings, failures, stock, students, classes, clients, and orders.
+
+Visual:
+Screenshot of a piece detail page showing state, context, firing history, notes, and failure status.
+
+4. The piece is the source of truth
+Explain that each physical object has its own record. Five identical mugs are still five individual pieces.
+
+Include a simple piece-record module showing:
+- piece name
+- production state
+- context
+- owner/client/student
+- firing history
+- failure outcome
+- stock status
+- notes
+
+5. Production contexts
+Show the different contexts a piece can carry:
+- Stock
+- Student work
+- Class
+- Custom order
+- Client order
+- Test or experiment
+- External piece
+
+Visual:
+A compact UI composition with context labels.
+
+6. Firings
+Explain loading, tracking, and completing kiln batches. Show how pieces move into a firing, receive an outcome, and return to production, stock, remake, or failure history.
+
+Visual:
+Screenshot showing a firing batch: pieces loaded, kiln event, completion outcome.
+
+7. Failure as useful history
+Explain that failure is recorded as an outcome, not a normal stage. It becomes visible, searchable, and useful for remakes, loss analysis, and studio learning.
+
+Visual:
+Failure record preview with simple operational stats.
+
+8. Stock derived from real objects
+Explain that stock is not an abstract number. It comes from real pieces that are ready, reserved, sold, missing, delivered, failed, or remade.
+
+9. Atelier memory over time
+Explain the long-term value: production history, firing patterns, recurring failures, glaze performance, class output, stock movement, and operational learning.
+
+10. Closing section
+Copy direction:
+vitrify is for ceramic ateliers that need to know what exists, where it is, what happened to it, and what should happen next.
+
+It does not replace ceramic knowledge.
+It preserves the record around it.
+
+CTA:
+- Request access
+- See how it works
+
+Mobile-first design requirements:
+The mobile site should not feel like a desktop landing page squeezed down.
+
+On mobile:
+- keep the hero short and immediately understandable
+- show the first app screenshot early
+- break section copy into short readable blocks
+- avoid multi-column grids collapsing into endless stacked cards
+- use horizontal dividers and compact modules
+- keep CTAs visible but not huge
+- use real interface fragments as proof
+- avoid oversized buttons
+- avoid “lego” rounded rectangles
+- keep line length comfortable
+- make the site feel like a serious product document, not a startup toy
+
+Desktop design requirements:
+Desktop can be more editorial:
+- two-column sections
+- screenshot beside explanation
+- larger whitespace
+- production-context matrix
+- grouped app screens in a calm layout
+- restrained sticky side navigation if useful
+
+Screenshot philosophy:
+Screenshots should feel like evidence, not decoration.
+
+Suggested screenshot placements:
+- Hero: mobile screenshot showing current piece queues or grouped pieces by state
+- After “What vitrify does”: piece detail page with state, context, firing history, notes, and failure status
+- Production contexts: UI composition showing Stock, Student work, Class, Custom order, Test, External piece
+- Firings: firing batch with pieces loaded, kiln event, and completion outcome
+- Failure/statistics: failure record and simple operational stats
+
+CTA tone:
+Avoid aggressive SaaS CTAs such as:
+- Get started now
+- Start your free trial
+- Supercharge your studio
+- Join the revolution
+
+Use serious, controlled CTAs:
+- Request access
+- See how it works
+- Contact res factae
+- Follow development
+- Ask about vitrify
+- Join the private preview
+
+Preferred CTA pair:
+Request access
+See how it works
+
+For an early-stage product, “Request access” should feel more serious and controlled than “Start free trial.”
+
+Final output:
+Create a complete landing page concept with:
+- refined messaging
+- page structure
+- section-by-section copy
+- UX/UI direction
+- visual hierarchy
+- component suggestions
+- responsive behavior
+- screenshot placement
+- CTA recommendations
+
+The result should feel editorial, precise, mature, and product-focused — more like a refined production ledger than a generic SaaS landing page.

@@ -1,0 +1,278 @@
+Act as a senior UX/UI expert working with a senior art director, brand strategist, and top-tier marketing/advertising creative director.
+
+Create a refined promotional website for **vitrify**. Lower case v.
+
+vitrify is a mobile-first Flutter/Firebase PWA for ceramic and porcelain ateliers. It is a professional production and atelier memory system, not a generic SaaS tool.
+The website must clearly communicate what vitrify is, who it serves, and why a ceramicist or atelier owner needs it — especially if they are not yet aware that this problem exists.
+
+The goal is not to create a loud startup landing page. The goal is to create a clear, elegant, ceramic-aware, professional website that makes the product feel immediately useful, trustworthy, and serious.
+
+## Product definition
+
+vitrify is a production memory system for ceramic studios.
+
+It records what exists, where each physical piece is in the making process, what happened to it, what failed, what is ready, what went into the kiln, what came out, and what the atelier can learn from that history.
+
+A simple definition:
+
+“vitrify is a professional production memory system for ceramic and porcelain ateliers.”
+
+Or:
+
+“vitrify helps ceramic ateliers keep track of physical pieces, production state, kiln activity, stock, failures, and atelier history.”
+
+Please improve the wording if needed.
+
+## What vitrify is not
+
+The website must avoid positioning vitrify as:
+
+- Shopify
+- a CRM
+- booking software
+- invoicing software
+- sales software
+- a kiln controller
+- a ceramic encyclopedia
+- a ceramics learning app
+- a hobby journal
+- a decorative lifestyle app
+- generic inventory software
+
+vitrify does not teach ceramics. It helps professional ceramicists manage what they already know how to do.
+
+## Core purpose
+
+The website must communicate that vitrify helps ateliers:
+
+- record physical ceramic or porcelain pieces
+- track production state
+- estimate kiln capacity
+- record firing history
+- preserve atelier memory
+- preserve firing and production history
+- track failures and losses
+- understand what is ready, waiting, blocked, or available
+- eventually support meaningful atelier statistics without polluting the daily workflow
+
+The core idea is: physical production becomes traceable without turning the studio into an administrative burden.
+
+## Target users
+
+The website is for professional ceramic and porcelain ateliers, including:
+
+- atelier owners
+- ceramicists
+- porcelain makers
+- production managers
+- kiln managers
+- studio assistants
+- class/workshop coordinators
+- small production teams
+
+Assume the user knows ceramics. Do not over-explain basic ceramic terms. The tone should respect their expertise.
+
+## Working context
+
+The website should make clear that vitrify is designed for real studio conditions:
+
+- mobile-first
+- fast to use
+- useful while standing in a studio
+- compatible with messy, retrospective, interrupted workflows
+- not dependent on perfect data entry
+- useful for physical objects, not just digital records
+
+A ceramic studio does not behave like a clean ecommerce database. The product must respect that.
+
+## Product model to communicate
+
+The website should make these ideas understandable without becoming too technical:
+
+1. A piece is one real physical object.
+   If five identical cups are made, they are five physical pieces, even if the interface groups them visually.
+
+2. Production states are simple:
+   - To fire
+   - To glaze
+   - Ready
+
+3. Failure is not a normal production stage.
+   Failure is a side outcome that must remain visible for history, statistics, and loss analysis.
+
+4. Firings are real kiln events.
+   vitrify records what went into the kiln, what happened, what came out, and what failed.
+
+5. Stock is derived from real pieces.
+   It is not a detached manual count.
+
+6. The atelier is the center.
+   vitrify is not centered on a personal user profile. It is centered on the atelier’s production memory.
+
+## Brand personality
+
+The website should feel:
+
+- professional
+- quiet
+- precise
+- calm
+- useful
+- archival
+- trustworthy
+- operational
+- refined
+- serious but not cold
+- respectful of physical craft
+
+It should not feel:
+
+- cute
+- childish
+- gamified
+- bubbly
+- influencer-like
+- overly animated
+- overly rounded
+- visually noisy
+- like generic SaaS
+- like Shopify
+- like a CRM
+- like a no-code dashboard
+- like playful craft software
+
+## Visual direction
+
+The website should be ceramic-aware without using obvious ceramic clichés.
+
+Avoid:
+
+- glaze textures
+- material textures
+- clay/earth visual metaphors
+- fire/flame imagery
+- kiln flames
+- ceramic objects as decorative motifs
+- skeuomorphic tools, shelves, pieces, or studio props
+- playful craft icons
+- fake handmade aesthetics
+- overused beige “artisan” branding
+
+The design should not visually imitate ceramics. It should understand the ceramic workflow without becoming literal.
+
+Use a clear, refined, professional layout. The visual system should feel like an elegant production ledger, not a decorative craft portfolio.
+
+## Typography
+
+Use Supreme as the main typeface.
+
+The typography must feel professional and controlled:
+
+- no oversized hero text that overwhelms the page
+- clear hierarchy
+- proportional relationship between headline, subtitle, and body text
+- good line-height
+- readable body copy
+- compact but not cramped
+- mature use of weight and spacing
+
+Avoid a toy-like scale with huge titles and tiny subtitles.
+
+## Website goals
+
+The promotional website must answer quickly:
+
+1. What is vitrify?
+2. Who is it for?
+3. What problem does it solve?
+4. Why would a ceramic atelier need it?
+5. What can it track?
+6. How does it differ from generic business software?
+7. Why is it useful in daily studio work?
+8. Why is it valuable over time?
+
+The site should make a ceramicist think:
+
+“I did not realize I needed this, but yes — this is exactly the missing memory layer of the studio.”
+
+## Suggested homepage structure
+
+Create a full homepage structure with refined copy.
+
+Possible sections:
+
+1. Hero section  
+   Introduce vitrify clearly and elegantly. Avoid vague poetic copy. Make the product understandable immediately.
+
+2. Problem section  
+   Explain the reality of ceramic production: pieces move through states, firings happen in batches, failures are remembered informally, stock becomes unclear, and studio memory is often scattered.
+
+3. Product explanation  
+   Explain that vitrify records pieces, production state, firings, failures, stock, and atelier history.
+
+4. Core workflows  
+   Show the main workflows:
+   - record pieces
+   - track production state
+   - load and complete firings
+   - record failures
+   - manage ready stock
+   - preserve history
+
+5. Why it is different  
+   Make clear that vitrify is not ecommerce, CRM, booking, invoicing, or kiln-control software.
+
+6. Mobile-first studio use  
+   Explain that it is designed for use in real studio conditions, especially on mobile.
+
+7. Atelier memory / long-term value  
+   Explain how the product becomes more valuable over time by preserving production history, firing history, failures, stock movement, and operational patterns.
+
+8. Statistics without workflow pollution  
+   Explain that future statistics emerge from daily work, rather than forcing the user to fill out extra dashboards.
+
+9. Closing section  
+   End with a calm, confident call to action or product statement.
+
+## Copy direction
+
+Rewrite all website copy from scratch.
+
+The tone should be:
+
+- clear
+- intelligent
+- calm
+- precise
+- professional
+- editorial but not vague
+- marketing-aware but not salesy
+- confident but not exaggerated
+
+Avoid generic SaaS phrases like:
+
+- “streamline your workflow”
+- “unlock your potential”
+- “all-in-one platform”
+- “supercharge your studio”
+- “manage everything in one place”
+- “revolutionize ceramics”
+
+Use language that feels specific to ceramic atelier production.
+
+## Required output
+
+Please provide:
+
+1. A complete homepage structure
+2. Refined hero headline options
+3. Refined subtitle options
+4. Full section-by-section website copy
+5. UX/UI layout recommendations
+6. Visual hierarchy recommendations
+7. Notes for mobile-first responsive design
+8. Suggested placement for real app screenshots
+9. CTA recommendations
+10. A final polished version of the homepage copy
+
+The final result should feel like a premium, professional product website for a serious ceramic/porcelain atelier tool — not like a generic SaaS template and not like a decorative craft website.

@@ -1,0 +1,617 @@
+Act as a senior UX/UI expert working with a senior art director, brand strategist, and top-tier marketing/advertising creative director.
+
+Create a refined promotional website concept for **vitrify**.
+
+Use **vitrify** with a lower-case “v” everywhere.
+
+Do not write “Vitrify” unless it appears at the beginning of a sentence and cannot be avoided. Prefer rewriting the sentence so **vitrify** remains lower-case.
+
+Examples:
+
+* Correct: “vitrify is a production memory system for ceramic ateliers.”
+* Correct: “The website should make vitrify feel precise, calm, and professional.”
+* Avoid: “Vitrify is...”
+
+Do not write implementation code unless explicitly asked.
+
+The goal is to create a complete promotional website strategy, structure, copy, and UX/UI direction.
+
+---
+
+# Product context
+
+vitrify is a mobile-first Flutter/Firebase PWA for professional ceramic ateliers.
+
+Use **ceramist** and **ceramic atelier** as the general terms.
+
+Do not create a distinction between ceramic makers and porcelain makers. Porcelain is part of the ceramic field. The product is targeted to ceramists in general, including studios working with porcelain, stoneware, earthenware, or mixed ceramic production.
+
+vitrify is a professional production and atelier memory system, not a generic SaaS tool.
+
+The website must clearly communicate:
+
+* what vitrify is
+* who it serves
+* what problem it solves
+* why a ceramist, atelier owner, kiln manager, production assistant, class coordinator, or custom-order studio would need it
+* why the product matters even to studios that have not yet named this problem
+
+The goal is not to create a loud startup landing page.
+
+The goal is to create a clear, elegant, ceramic-aware, professional website that makes vitrify feel immediately useful, trustworthy, and serious.
+
+---
+
+# Core product definition
+
+vitrify is a professional production memory system for ceramic ateliers.
+
+It helps studios record what exists, where each physical piece is in the making process, what happened to it, what failed, what is ready, what belongs to stock, what belongs to a student, class, client, or custom order, what went into the kiln, what came out, and what the atelier can learn from that history.
+
+Simple definition:
+
+> vitrify is a production memory system for ceramic studios.
+
+Alternative definition:
+
+> vitrify helps ceramic ateliers track physical pieces, production state, firings, failures, stock, students, classes, clients, custom orders, and atelier history.
+
+Improve these lines if needed.
+
+The website must make clear that vitrify is not only for anonymous stock production.
+
+It is for real atelier work, where pieces may exist for many different reasons:
+
+* stock
+* classes
+* students
+* clients
+* custom orders
+* experiments
+* external or brought-in pieces
+* remakes after failure
+
+---
+
+# What vitrify is not
+
+Avoid positioning vitrify as:
+
+* Shopify
+* a CRM
+* booking software
+* invoicing software
+* sales software
+* a kiln controller
+* a ceramic encyclopedia
+* a ceramics learning app
+* a hobby journal
+* a decorative lifestyle app
+* generic inventory software
+* school management software
+* accounting software
+
+vitrify does not teach ceramics.
+
+It helps professional ceramists manage what they already know how to do.
+
+It may support classes, students, clients, and custom orders, but it must not feel like CRM, booking, invoicing, or school-management software.
+
+Those contexts matter only because they explain why a physical piece exists and who or what it belongs to.
+
+---
+
+# Core purpose
+
+The website must communicate that vitrify helps ateliers:
+
+* record physical ceramic pieces
+* track production state
+* estimate kiln capacity
+* record firing history
+* preserve atelier memory
+* preserve firing and production history
+* track failures and losses
+* understand what is ready, waiting, blocked, missing, reserved, or available
+* connect pieces to stock, students, classes, clients, or custom orders
+* prevent student pieces, class pieces, and custom-order pieces from becoming lost or confused with stock
+* support meaningful atelier statistics without polluting the daily workflow
+
+Core idea:
+
+> Physical production becomes traceable without turning the studio into an administrative burden.
+
+Improve this wording if needed.
+
+---
+
+# Deeper product model
+
+The website should communicate the product model clearly, without becoming technical.
+
+A Piece is one real physical object.
+
+If five identical cups are made, they are five physical pieces, even if the interface groups them visually.
+
+Each piece may have:
+
+* a production state
+* a purpose
+* an origin
+* a firing history
+* a failure history
+* a stock or commercial status
+* a linked person, class, client, or custom order
+* notes
+* value or loss estimate
+* atelier history
+
+Production states are intentionally simple:
+
+* To fire
+* To glaze
+* Ready
+
+Failure is not a normal production stage.
+
+Failure is a side outcome that must remain visible for history, statistics, traceability, and loss analysis.
+
+Firings are real kiln events.
+
+vitrify records:
+
+* what went into the kiln
+* what happened
+* what came out
+* what failed
+* what changed state
+
+Stock is derived from real pieces.
+
+It is not a detached manual count.
+
+The atelier is the center.
+
+vitrify is not centered on a personal user profile. It is centered on the atelier’s production memory.
+
+---
+
+# Classes, students, clients, and custom orders
+
+This is a core part of vitrify.
+
+vitrify must support atelier work that is not only anonymous stock production.
+
+A professional ceramic atelier often manages several overlapping production contexts:
+
+* pieces made for general stock
+* pieces made for a custom client order
+* pieces made during a class or workshop
+* pieces belonging to a student
+* pieces brought in by a student or client
+* test pieces or one-off experiments
+* replacement pieces made because an earlier piece failed
+
+These contexts are not decorative side features.
+
+They are part of the core product model because they explain why a physical piece exists and who or what it belongs to.
+
+The website must make this value clear in plain, elegant language.
+
+A ceramist should immediately understand that vitrify can help answer questions like:
+
+* Which student pieces still need firing?
+* Which class pieces are ready to return?
+* Which pieces belong to this custom order?
+* What failed in this order?
+* What needs to be remade?
+* Which client pieces are ready but not yet delivered?
+* Which external or brought-in pieces are in the kiln queue?
+* What is actual available stock, and what is already reserved?
+
+---
+
+# People
+
+vitrify should support lightweight people records.
+
+A person can be:
+
+* a student
+* a client
+* both
+
+Avoid making this sound like CRM.
+
+The point is not sales pipeline management.
+
+The point is to know which physical pieces belong to whom and why they exist.
+
+A person may attend a class, later place a custom order, and have pieces linked to both contexts.
+
+---
+
+# Classes and workshops
+
+Classes and workshops are production contexts.
+
+A class may generate many physical pieces from multiple students.
+
+vitrify should help an atelier see:
+
+* which students attended
+* which pieces belong to a class
+* what still needs firing
+* what still needs glazing
+* what is ready to return
+* what failed
+* what has already been handed back
+* whether any pieces are missing a student owner
+
+Class pieces are still individual physical pieces.
+
+A class is a context, not a separate inventory system.
+
+The language should feel practical and atelier-oriented, not school-administration oriented.
+
+---
+
+# Students
+
+Student-related tracking should focus on physical work moving through the studio.
+
+The website should communicate that vitrify helps avoid common atelier problems:
+
+* student pieces lost on shelves
+* pieces ready but not returned
+* pieces fired without a clear owner
+* failed student pieces not recorded
+* class batches mixed with stock production
+* multiple students’ work becoming indistinguishable after firing
+
+---
+
+# Clients and custom orders
+
+Custom orders are production contexts linked to clients and pieces.
+
+vitrify does not need to become quoting, invoicing, payment, or CRM software.
+
+But it must support the production side of custom orders:
+
+* who the client is
+* what needs to be made
+* which physical pieces belong to the order
+* current production state
+* failures and replacements
+* ready, reserved, delivered, shipped, or picked-up status
+* notes and requirements
+* due date if relevant
+* whether the order is complete, partial, blocked, or needs remake
+
+The website should make clear that custom-order pieces should not accidentally appear as available stock.
+
+They are reserved for their client or order unless explicitly released into stock.
+
+---
+
+# Production contexts
+
+Every piece should be able to carry a production context.
+
+Core contexts include:
+
+* Stock
+* Student work
+* Class/workshop piece
+* Custom order
+* Client order
+* Test/experiment
+* External/brought-in piece
+
+Explain this in simple, refined language.
+
+Possible lines:
+
+> Every piece has a state, a history, and a reason for existing.
+
+Or:
+
+> Know not only what a piece is, but where it is, what happened to it, and who it belongs to.
+
+Improve this wording.
+
+---
+
+# Target users
+
+The website is for professional ceramic ateliers, including:
+
+* atelier owners
+* ceramists
+* production managers
+* kiln managers
+* studio assistants
+* class/workshop coordinators
+* small production teams
+* studios managing custom orders
+* studios handling student or client work
+
+Assume the user knows ceramics.
+
+Do not over-explain basic ceramic terms.
+
+The tone should respect their expertise.
+
+---
+
+# Working context
+
+The website should make clear that vitrify is designed for real studio conditions:
+
+* mobile-first
+* fast to use
+* useful while standing in a studio
+* compatible with messy, retrospective, interrupted workflows
+* not dependent on perfect data entry
+* useful for physical objects, not just digital records
+* able to support stock, student work, class work, custom orders, tests, and external pieces
+
+A ceramic studio does not behave like a clean ecommerce database.
+
+The product must respect that.
+
+---
+
+# Brand personality
+
+The website should feel:
+
+* professional
+* quiet
+* precise
+* calm
+* useful
+* archival
+* trustworthy
+* operational
+* refined
+* serious but not cold
+* respectful of physical craft
+
+It should not feel:
+
+* cute
+* childish
+* gamified
+* bubbly
+* influencer-like
+* overly animated
+* overly rounded
+* visually noisy
+* like generic SaaS
+* like Shopify
+* like a CRM
+* like a no-code dashboard
+* like school software
+* like booking software
+* like playful craft software
+
+---
+
+# Visual direction
+
+The website should be ceramic-aware without using obvious ceramic clichés.
+
+Avoid:
+
+* glaze textures
+* material textures
+* clay/earth visual metaphors
+* fire/flame imagery
+* kiln flames
+* ceramic objects as decorative motifs
+* skeuomorphic tools, shelves, pieces, or studio props
+* playful craft icons
+* fake handmade aesthetics
+* overused beige “artisan” branding
+
+The design should not visually imitate ceramics.
+
+It should understand ceramic workflow without becoming literal.
+
+Use a clear, refined, professional layout.
+
+The visual system should feel like an elegant production ledger, not a decorative craft portfolio.
+
+---
+
+# Typography
+
+Use **Supreme** as the main typeface.
+
+The typography must feel professional and controlled:
+
+* no oversized hero text that overwhelms the page
+* clear hierarchy
+* proportional relationship between headline, subtitle, and body text
+* good line-height
+* readable body copy
+* compact but not cramped
+* mature use of weight and spacing
+
+Avoid a toy-like scale with huge titles and tiny subtitles.
+
+---
+
+# Website goals
+
+The promotional website must answer quickly:
+
+1. What is vitrify?
+2. Who is it for?
+3. What problem does it solve?
+4. Why would a ceramic atelier need it?
+5. What can it track?
+6. How does it support stock, classes, students, clients, and custom orders?
+7. How does it differ from generic business software?
+8. Why is it useful in daily studio work?
+9. Why is it valuable over time?
+
+The site should make a ceramist think:
+
+> “I did not realize I needed this, but yes — this is exactly the missing memory layer of the studio.”
+
+---
+
+# Suggested homepage structure
+
+Create a full homepage structure with refined copy.
+
+Recommended sections:
+
+## 1. Hero
+
+Introduce vitrify clearly and elegantly.
+
+Avoid vague poetic copy.
+
+Make the product understandable immediately.
+
+## 2. The real studio problem
+
+Explain the reality of ceramic production:
+
+* pieces move through states
+* firings happen in batches
+* failures are often remembered informally
+* student and client pieces can become mixed with stock
+* custom orders can be blocked by one failed object
+* studio memory becomes scattered across shelves, notebooks, messages, spreadsheets, and memory
+
+## 3. What vitrify does
+
+Explain that vitrify records:
+
+* pieces
+* production state
+* firings
+* failures
+* stock
+* people
+* classes
+* custom orders
+* atelier history
+
+## 4. Production contexts
+
+Explain that every piece can belong to a purpose:
+
+* stock
+* student work
+* class/workshop
+* custom order
+* client order
+* test
+* external/brought-in piece
+
+## 5. Core workflows
+
+Show the main workflows:
+
+* record pieces
+* assign context
+* track production state
+* load and complete firings
+* record failures
+* manage ready stock
+* track student/class/custom-order pieces
+* preserve history
+
+## 6. Why vitrify is different
+
+Make clear that vitrify is not ecommerce, CRM, booking, invoicing, school management, or kiln-control software.
+
+## 7. Mobile-first studio use
+
+Explain that vitrify is designed for real studio conditions, especially on mobile.
+
+## 8. Atelier memory and long-term value
+
+Explain how vitrify becomes more valuable over time by preserving:
+
+* production history
+* firing history
+* failures
+* stock movement
+* class/student/client context
+* operational patterns
+
+## 9. Statistics without workflow pollution
+
+Explain that future statistics emerge from daily work, rather than forcing the user to maintain extra dashboards.
+
+## 10. Closing section
+
+End with a calm, confident call to action or product statement.
+
+---
+
+# Copy direction
+
+Rewrite all website copy from scratch.
+
+The tone should be:
+
+* clear
+* intelligent
+* calm
+* precise
+* professional
+* editorial but not vague
+* marketing-aware but not salesy
+* confident but not exaggerated
+
+Avoid generic SaaS phrases like:
+
+* “streamline your workflow”
+* “unlock your potential”
+* “all-in-one platform”
+* “supercharge your studio”
+* “manage everything in one place”
+* “revolutionize ceramics”
+
+Use language that feels specific to ceramic atelier production.
+
+---
+
+# Required output
+
+Provide:
+
+1. A complete homepage structure
+2. Refined hero headline options
+3. Refined subtitle options
+4. Full section-by-section website copy
+5. A dedicated section explaining stock, student work, classes, clients, and custom orders
+6. UX/UI layout recommendations
+7. Visual hierarchy recommendations
+8. Notes for mobile-first responsive design
+9. Suggested placement for real app screenshots
+10. CTA recommendations
+11. A final polished version of the homepage copy
+
+The final result should feel like a premium, professional product website for a serious ceramic atelier tool.
+
+It must not feel like:
+
+* a generic SaaS template
+* CRM software
+* school-management software
+* ecommerce software
+* a decorative craft website
+* a beginner ceramics learning app
+
+The strongest impression should be:
+
+> vitrify is the missing production memory layer for a serious ceramic studio.
