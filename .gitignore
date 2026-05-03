@@ -31,3 +31,6 @@ media-originals/
 *.tif
 *.tiff
 *.heic
+
+# macOS
+.DS_Store

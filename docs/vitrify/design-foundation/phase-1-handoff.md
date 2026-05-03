@@ -307,7 +307,7 @@ Flutter app UI:
 
 Screenshots:
 
-- docs/vitrify/screenshots/placeholder-screenshot-plan.md
+- docs/vitrify/screenshots/app-screenshot-plan.md
 
 CMS:
 
