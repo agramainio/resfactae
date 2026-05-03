@@ -295,6 +295,7 @@ Design foundation:
 - docs/vitrify/design-foundation/tokens.md
 - docs/vitrify/design-foundation/components.md
 - docs/vitrify/design-foundation/font-delivery.md
+- docs/vitrify/design-foundation/no-go-visual-rules.md
 
 Promo site:
 
